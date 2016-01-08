@@ -203,3 +203,11 @@ Optional: Install Node-RED
     
 9. You can password-protect your Node-RED instance, add HTTPS support, and make other configuration changes by modifying `/home/node-red/.node-red/settings.js` and restarting the service with `sudo systemctl restart node-red`. 
 
+
+Audio
+-----
+
+1. Install the microphone tools.
+
+    sudo apt-get install alsa-utils
+
