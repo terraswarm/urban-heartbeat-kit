@@ -7,7 +7,9 @@ Information about the preliminary gateway kit for the Urban Heartbeat workshop
 Gateway
 ----------
 
-![Gateway](https://raw.githubusercontent.com/terraswarm/urban-heartbeat-kit/master/media/gateway.jpg)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/terraswarm/urban-heartbeat-kit/master/media/gateway.jpg" alt="Gateway" width="50%;">
+</p>
 
 ### Hardware
 
