@@ -75,7 +75,7 @@ folder.
 Sensors
 -------
 
-1. **[PowerBlade](https://github.com/lab11/powerblade)**: A 1 inch2 power meter. Advertises
+1. **[PowerBlade](https://github.com/lab11/powerblade)**: A 1 inch by 1 inch power meter. Advertises
 power readings every second over BLE.
 
     <img src="https://raw.githubusercontent.com/lab11/powerblade/master/images/powerblade.png" alt="PowerBlade" width="30%;">
