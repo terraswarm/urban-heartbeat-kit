@@ -77,7 +77,13 @@ Sensors
 
 1. **[PowerBlade](https://github.com/lab11/powerblade)**: A 1 inch2 power meter. Advertises
 power readings every second over BLE.
+
+    <img src="https://raw.githubusercontent.com/lab11/powerblade/master/images/powerblade.png" alt="PowerBlade" width="30%;">
+
+
+
 1. **[BLEES](https://github.com/lab11/blees)**: A 1 inch round environment sensor. Advertises
 temperature, humidity, light, pressure, and vibration each second.
 
+    <img src="https://raw.githubusercontent.com/lab11/blees/master/media/blees.png" alt="BLEES" width="25%;">
 
