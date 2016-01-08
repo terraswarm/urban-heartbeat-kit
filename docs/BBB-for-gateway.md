@@ -209,5 +209,5 @@ Audio
 
 1. Install the microphone tools.
 
-    sudo apt-get install alsa-utils
+        sudo apt-get install alsa-utils
 
