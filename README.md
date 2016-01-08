@@ -67,6 +67,12 @@ Example listeners for subscribing to packets are in the
 [examples](https://github.com/terraswarm/urban-heartbeat-kit/tree/master/examples)
 folder.
 
+#### GDP Client
+
+The gateway comes with the c client and Python bindings for using
+GDP.
+
+
 ### Interacting with the BBB
 
 [Use the BBB gateway](https://github.com/terraswarm/urban-heartbeat-kit/blob/master/docs/BBB-for-gateway-usage.md)
