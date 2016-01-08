@@ -50,3 +50,13 @@ folder.
 - [Setup a BeagleBone Black to be a gateway](https://github.com/terraswarm/urban-heartbeat-kit/blob/master/docs/BBB-for-gateway.md)
 - [Use the BBB gateway](https://github.com/terraswarm/urban-heartbeat-kit/blob/master/docs/BBB-for-gateway-usage.md)
 
+
+Sensors
+-------
+
+1. **[PowerBlade](https://github.com/lab11/powerblade)**: A 1 inch2 power meter. Advertises
+power readings every second over BLE.
+1. **[BLEES](https://github.com/lab11/blees)**: A 1 inch round environment sensor. Advertises
+temperature, humidity, light, pressure, and vibration each second.
+
+
