@@ -93,3 +93,12 @@ fully supported by the Linux kernel.
 
 For instructions, see the [GAP Readme](https://github.com/lab11/gap#sniffing-154-packets).
 
+### Audo/Microphone Support
+
+View that the microphone is attached:
+
+    arecord -l
+    
+Record an audio sample:
+
+    arecord -D hw:1 -r 44100 -f S16_LE sound.wav
