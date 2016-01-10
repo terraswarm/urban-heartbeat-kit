@@ -157,16 +157,9 @@ The GAP overlay and others are setup in a repository also maintained by RCN.
 20. Clone gateway github repository
 
         git clone https://github.com/lab11/gateway.git
+        git clone https://github.com/terraswarm/urban-heartbeat-kit.git
 
-21. Test functionality
 
-        Ensure USB BLE dongle is attached
-
-        cd ~/gateway/software/ble-gateway
-        npm install
-        ./ble-gateway.js
-
-        Packet data from nearby devices should be displayed
 
 Optional: Install Node-RED
 --------------------------
