@@ -23,7 +23,7 @@ for the BBB. I used:
 5. Install some useful packages.
 
         sudo apt-get update
-        sudo apt-get install vim git lsb-release tcpdump pkg-config libnl-3-dev libnl-genl-3-dev libc-ares-dev libwrap0-dev cmake zlib1g-dev libssl-dev uuid-dev screen curl bluetooth bluez bluez-hcidump libbluetooth-dev libudev-dev libusb-1.0-0 libusb-1.0-0-dev python-pip ntp
+        sudo apt-get install vim git lsb-release tcpdump pkg-config libnl-3-dev libnl-genl-3-dev libc-ares-dev libwrap0-dev cmake zlib1g-dev libssl-dev uuid-dev screen curl bluetooth bluez bluez-hcidump libbluetooth-dev libudev-dev libusb-1.0-0 libusb-1.0-0-dev python-dev python-pip ntp
 
 6. Disable root SSH.
 
@@ -121,6 +121,13 @@ The GAP overlay and others are setup in a repository also maintained by RCN.
         cd Python-3.5.1
         ./configure
         make sudo make install
+
+14. Install some Python dependencies.
+
+        sudo pip install paho-mqtt
+        sudo pip install websocket
+        sudo pip3.5 install hbmqtt
+        sudo pip3.5 install websockets
 
 13. Install Node.js.
 
