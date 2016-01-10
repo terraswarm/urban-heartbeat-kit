@@ -159,6 +159,13 @@ The GAP overlay and others are setup in a repository also maintained by RCN.
         git clone https://github.com/lab11/gateway.git
         git clone https://github.com/terraswarm/urban-heartbeat-kit.git
 
+21. Install gateway dependencies.
+
+        pushd gateway/software/ble-gateway-broadcast && npm i && popd
+        pushd gateway/software/ble-gateway-mqtt && npm i && popd
+        pushd gateway/software/ble-gateway-server && npm i && popd
+        pushd gateway/software/ble-gateway-ws && npm i && popd
+        pushd urban-heartbeat-kit/examples && npm i && popd
 
 
 Optional: Install Node-RED
