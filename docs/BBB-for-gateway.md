@@ -13,7 +13,8 @@ for the BBB. I used:
         wget https://rcn-ee.com/rootfs/bb.org/testing/2016-01-03/console/bone-debian-8.2-console-armhf-2016-01-03-2gb.img.xz
         sha256sum: 0e50b5e436a10626f2880f9cd70ddb7688f0875f24801a5f538e7417e2971238
 
-2. Write the image to an SD card. I use `Win32 Disk Imager``.
+2. Write the image to an SD card. I use
+[Win32 Disk Imager](http://sourceforge.net/projects/win32diskimager/).
 
 3. Plug the SD card into a BBB and boot the BBB.
 
@@ -22,7 +23,7 @@ for the BBB. I used:
 5. Install some useful packages.
 
         sudo apt-get update
-        sudo apt-get install vim git lsb-release tcpdump pkg-config libnl-3-dev libnl-genl-3-dev libc-ares-dev libwrap0-dev cmake zlib1g-dev libssl-dev uuid-dev screen curl bluetooth bluez bluez-hcidump libbluetooth-dev libudev-dev libusb-1.0-0 libusb-1.0-0-dev python3 python-pip python3-pip ntp
+        sudo apt-get install vim git lsb-release tcpdump pkg-config libnl-3-dev libnl-genl-3-dev libc-ares-dev libwrap0-dev cmake zlib1g-dev libssl-dev uuid-dev screen curl bluetooth bluez bluez-hcidump libbluetooth-dev libudev-dev libusb-1.0-0 libusb-1.0-0-dev python-pip ntp
 
 6. Disable root SSH.
 
@@ -113,6 +114,14 @@ The GAP overlay and others are setup in a repository also maintained by RCN.
         sudo systemctl daemon-reload
         sudo systemctl enable mosquitto
 
+13. Install Python 3.5.
+
+        wget https://www.python.org/ftp/python/3.5.1/Python-3.5.1.tgz
+        tar xf Python-3.5.1.tgz
+        cd Python-3.5.1
+        ./configure
+        make sudo make install
+
 13. Install Node.js.
 
         curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
@@ -153,7 +162,7 @@ The GAP overlay and others are setup in a repository also maintained by RCN.
         Packet data from nearby devices should be displayed
 
 Optional: Install Node-RED
-==================================
+--------------------------
 
 2. Install Node-RED.
 
