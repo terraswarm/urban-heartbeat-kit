@@ -2,7 +2,7 @@ var dgram = require('dgram');
 
 var PORT = 3002;
 
-var client = dgram.createSocket('udp4');
+var client = dgram.createSocket({type: 'udp4', reuseAddr: true, reusePort: true});
 
 client.on('listening', function () {
     client.setBroadcast(true);
