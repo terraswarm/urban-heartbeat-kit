@@ -32,6 +32,10 @@ for the BBB. I used:
 
         passwd
 
+7. Add `sbin` to the path. Not sure why this isn't the default.
+
+        sudo sed -i 's\/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games\/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/sbin\g' /etc/profile
+
 8. Upgrade the kernel
 
         sudo /opt/scripts/tools/update_kernel.sh --beta --bone-channel
