@@ -163,6 +163,7 @@ The GAP overlay and others are setup in a repository also maintained by RCN.
 
         pushd gateway/software/ble-gateway-publish && npm i && popd
         pushd gateway/software/ble-gateway-server && npm i && popd
+        pushd gateway/software/adv-gateway-ip && npm i && popd
         pushd urban-heartbeat-kit/examples && npm i && popd
 
 22. Setup ble-gateway to start on boot.
@@ -172,6 +173,7 @@ The GAP overlay and others are setup in a repository also maintained by RCN.
        sudo systemctl disable lighttpd
        sudo systemctl enable ble-gateway-publish
        sudo systemctl enable ble-gateway-server
+       sudo systemctl enable adv-gateway-ip
 
 
 Optional: Install Node-RED
