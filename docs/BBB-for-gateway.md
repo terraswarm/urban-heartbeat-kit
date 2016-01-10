@@ -215,3 +215,29 @@ Audio
 
         sudo apt-get install alsa-utils
 
+
+GDP
+---
+
+1. Get the source repo.
+
+        git clone https://repo.eecs.berkeley.edu/git/projects/swarmlab/gdp.git
+    
+2. Prep the system.
+
+        cd gdp
+        ./adm/gdp-setup.sh
+
+3. Build the client sources.
+
+        ./deb-pkg/package-client.sh 0.3-1
+        ./lang/python/deb-pkg/package.sh 0.3-1
+
+4. Install the client.
+
+        sudo dpkg -i gdp-client_0.3-1_armhf.deb
+        sudo dpkg -i python-gdp_0.3-1_all.deb
+        sudo apt-get -f install
+
+
+
