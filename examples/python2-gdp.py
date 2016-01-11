@@ -30,4 +30,4 @@ while True:
 	adv_obj = json.loads(data)
 
 	print('Appending {} to the log.'.format(adv_obj))
-	log.append({'data': data)
+	log.append({'data': data})
