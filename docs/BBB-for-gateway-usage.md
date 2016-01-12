@@ -85,6 +85,11 @@ will update the code to the latest version.
 
 Each service, both gateway and IP advertisement are run at boot in...
 
+### WiFi Interface
+Adafruit has instructions for setting up a WiFi connection
+[located here](https://learn.adafruit.com/setting-up-wifi-with-beaglebone-black/configuration).
+**Do not** perform the kernel upgrade step (first step) since that has already been
+run on the Beaglebone gateway.
 
 ### 802.15.4 Interface
 

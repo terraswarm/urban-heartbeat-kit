@@ -6,10 +6,11 @@ steps to get the gateway running on a new BBB, a BBB can be flashed
 directly with a pre-built image we have made.
 
 1. Download the image.
+    [urban-hearbeat-kit_1.0.0](http://nuclear.eecs.umich.edu/public/urban-heartbeat-kit_1.0.0.zip)
 
-2. Uncompress.
+2. Unzip.
 
-3. Load the image onto a 2 GB or larger micro SD card. I typically use
+3. Load the image onto a 8 GB or larger micro SD card. I typically use
 [Win32 Disk Imager](http://sourceforge.net/projects/win32diskimager/).
 
 4. Plug the SD card into the BeagleBone Black.

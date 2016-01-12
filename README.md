@@ -23,7 +23,10 @@ The gateway is composed of:
 - A [WiFi dongle](http://www.amazon.com/Edimax-EW-7811Un-150Mbps-Raspberry-Supports/dp/B003MTTJOY)
 - A [Microphone dongle](http://www.amazon.com/Super-Microphone-Adapter-Driver-Notebook/dp/B00M3UJ42A)
 
-[How to set up a BeagleBone Black to be a gateway](https://github.com/terraswarm/urban-heartbeat-kit/blob/master/docs/BBB-gateway-setup-from-scratch.md)
+There are two options for setting up a gateway:
+ * [from image](docs/BBB-gateway-setup-image.md)
+ * [from scratch](docs/BBB-gateway-setup-from-scratch.md)
+
 
 ### Software
 
@@ -69,7 +72,7 @@ folder.
 
 #### GDP Client
 
-The gateway comes with the c client and Python bindings for using
+The gateway comes with the C client and Python bindings for using
 GDP.
 
 
