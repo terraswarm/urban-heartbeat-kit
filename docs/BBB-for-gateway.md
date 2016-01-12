@@ -27,7 +27,7 @@ for the BBB. I used:
 
 6. Disable root SSH.
 
-        sudo sed -i s/PermitRootLogin yes/PermitRootLogin no/g /etc/ssh/sshd_config
+        sudo sed -i 's/PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config
 
 7. Change the `debian` account password.
 
