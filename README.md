@@ -23,7 +23,7 @@ The gateway is composed of:
 - A [WiFi dongle](http://www.amazon.com/Edimax-EW-7811Un-150Mbps-Raspberry-Supports/dp/B003MTTJOY)
 - A [Microphone dongle](http://www.amazon.com/Super-Microphone-Adapter-Driver-Notebook/dp/B00M3UJ42A)
 
-[Setup a BeagleBone Black to be a gateway](https://github.com/terraswarm/urban-heartbeat-kit/blob/master/docs/BBB-for-gateway.md)
+[How to set up a BeagleBone Black to be a gateway](https://github.com/terraswarm/urban-heartbeat-kit/blob/master/docs/BBB-gateway-setup-from-scratch.md)
 
 ### Software
 
