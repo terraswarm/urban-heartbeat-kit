@@ -6,14 +6,21 @@ to a GDP log.
 
 import json
 import socket
+import uuid
 
 import gdp
+
+LOG_NAME_BASE = 'org.terraswarm.gatewayv1'
+
+print('Get MAC address')
+mac = hex(uuid.getnode())[2:14]
+log_name = '{}.{}'.format(LOG_NAME_BASE, mac)
 
 print('Initialize GDP')
 gdp.gdp_init()
 
 print('Connect to a GDP log')
-gcl_name = gdp.GDP_NAME('edu.umich.bradjc.01')
+gcl_name = gdp.GDP_NAME(log_name)
 log = gdp.GDP_GCL(gcl_name, gdp.GDP_MODE_RA)
 
 print('Create socket for receiving BLE data')
