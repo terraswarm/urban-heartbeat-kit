@@ -1,0 +1,13 @@
+[Unit]
+Description=gateway-gdp-publish
+After=bluetooth.target ble-gateway-publish.service
+
+[Service]
+ExecStart=/usr/bin/python /home/debian/urban-heartbeat-kit/examples/python2-gdp.py
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=gateway-gdp-publish
+
+[Install]
+WantedBy=multi-user.target
