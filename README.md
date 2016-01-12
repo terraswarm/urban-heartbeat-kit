@@ -28,7 +28,8 @@ There are two options for setting up a gateway:
  * [from scratch](docs/BBB-gateway-setup-from-scratch.md)
 
 
-### Software
+Software
+--------
 
 #### BleGateway
 
