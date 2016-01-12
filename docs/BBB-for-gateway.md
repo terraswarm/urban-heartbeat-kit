@@ -169,11 +169,13 @@ The GAP overlay and others are setup in a repository also maintained by RCN.
 22. Setup ble-gateway to start on boot.
 
         sudo cp gateway/systemd/* /etc/systemd/system/
+        sudo cp urban-heartbeat-kit/systemd/* /etc/systemd/system/
         sudo systemctl daemon-reload
         sudo systemctl disable lighttpd
         sudo systemctl enable ble-gateway-publish
         sudo systemctl enable ble-gateway-server
         sudo systemctl enable adv-gateway-ip
+        sudo systemctl enable gateway-gdp-publish
 
 
 Optional: Install Node-RED
