@@ -23,7 +23,8 @@ The gateway is composed of:
 - A [WiFi dongle](http://www.amazon.com/Edimax-EW-7811Un-150Mbps-Raspberry-Supports/dp/B003MTTJOY)
 - A [Microphone dongle](http://www.amazon.com/Super-Microphone-Adapter-Driver-Notebook/dp/B00M3UJ42A)
 
-There are two options for setting up a gateway:
+The gateway in the kit is pre-configured. If you want to commission a new
+BeagleBone Black, there are two options:
  * [from image](docs/BBB-gateway-setup-image.md)
  * [from scratch](docs/BBB-gateway-setup-from-scratch.md)
 
@@ -73,8 +74,9 @@ folder.
 
 #### GDP Client
 
-The gateway comes with the C client and Python bindings for using
-GDP.
+The gateway comes with the C client and Python bindings installed for using
+GDP. There is also an
+[example publisher script](https://github.com/terraswarm/urban-heartbeat-kit/blob/master/examples/python2-gdp.py).
 
 
 ### Interacting with the BBB
