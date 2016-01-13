@@ -50,7 +50,7 @@ folder.
 #### GDP Client
 
 The gateway comes with the C client and Python bindings installed for using
-GDP. There is also an
+[GDP](https://swarmlab.eecs.berkeley.edu/projects/4814/global-data-plane). There is also an
 [example publisher script](https://github.com/terraswarm/urban-heartbeat-kit/blob/master/examples/python2-gdp.py).
 
 
