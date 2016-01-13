@@ -34,7 +34,7 @@ passed to subscribed applications.
 You can access these packets over a couple protocols once you know
 the IP address of the BBB gateway (or if you are on the same
 LAN). For code examples, look
-[here](https://github.com/lab11/gateway/tree/master/software/examples).
+[here](https://github.com/terraswarm/urban-heartbeat-kit/tree/master/examples).
 
 - **Quick View**
 
@@ -83,7 +83,28 @@ run directly on the gateway. To connect:
 In the `$HOME` folder is this repository. Running `git pull` in that folder
 will update the code to the latest version.
 
-Each service, both gateway and IP advertisement are run at boot in...
+### Configuring Startup
+
+Four main services are configured to start at boot:
+
+1. `ble-gateway-publish`: Recieves BLE packets and publishes them on the various protocols.
+2. `ble-gateway-server`: Displays the received packets in a web interface.
+3. `gateway-gdp-publish`: Publish gateway packets to a GDP log.
+4. `adv-gateway-ip`: Broadcast the gateway IP address over BLE/Eddystone.
+
+Each service is running inside of [systemd](http://www.freedesktop.org/wiki/Software/systemd/).
+To stop a service:
+
+    sudo systemctl stop <service name>
+
+To restart a service:
+
+    sudo systemctl restart <service name>
+    
+To stop a service from running at boot:
+
+    sudo systemctl disable <service name>
+
 
 ### WiFi Interface
 Adafruit has instructions for setting up a WiFi connection
