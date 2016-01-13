@@ -4,6 +4,13 @@ Using the BeagleBone Black - Gateway Version
 The gateway is configured to accept data from many sensors
 and distribute the data to many applications.
 
+Initial Setup
+-------------
+
+To setup the gateway plug the BBB into a ethernet network and then power
+it with the included power adapter. The BBB will use DHCP to obtain
+an IP address.
+
 Find the IP Address of the BBB
 ------------------------------
 
