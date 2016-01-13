@@ -38,8 +38,10 @@ Software
 
 The [BleGateway](https://github.com/lab11/gateway/tree/master/software/ble-gateway)
 provides a general way to collect data from BLE devices.
-It's organized as a core gateway service that publishes formatted data packets
-from service adapters that make the packets available over various protocols.
+It's organized as a core gateway service that receives device-specific BLE packets
+from nearby devices,
+parses those packets with a device-provided parser, and
+publishes the formatted data packets over various protocols.
 
 Example listeners for subscribing to packets are in the
 [examples](https://github.com/terraswarm/urban-heartbeat-kit/tree/master/examples)
