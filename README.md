@@ -39,35 +39,6 @@ provides a general way to collect data from BLE devices.
 It's organized as a core gateway service that publishes formatted data packets
 from service adapters that make the packets available over various protocols.
 
-```
-                                       +--------+
-                                       |        |
-                                       |  Web   |
-                             +-------> | Server |
-                             |         |        |
-                             |         +--------+
-                             |
-                             |          +------+
-                             |          |      |  MQTT topic "ble-gateway-advertisements"
-                +---------+  +--------> | MQTT | +--------------------------------------->
-    BLE         |         |  |          |      |
- Advertisement  |   Ble   +--+          +------+
-+-+    +------> | Gateway |  |
-|D+----+        |         |  |       +-----------+
-+-+             +---------+  |       |           |  WebSocket Port 3001
-                             +-----> | WebSocket | +------------------->
-                             |       |  Server   |
-                             |       |           |
-                             |       +-----------+
-                             |
-                             |       +-----------+
-                             |       |           |  UDP port 3002
-                             +-----> |    UDP    | +------------->
-                                     | Broadcast |
-                                     |           |
-                                     +-----------+
-```
-
 Example listeners for subscribing to packets are in the
 [examples](https://github.com/terraswarm/urban-heartbeat-kit/tree/master/examples)
 folder.
