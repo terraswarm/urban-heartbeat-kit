@@ -84,13 +84,16 @@ LAN). For code examples, look
 Hacking the Gateway
 -------------------
 
-The above protocols and the examples in the `software/examples` folder can also
+The above protocols and the examples in the `examples` folder can also
 run directly on the gateway. To connect:
 
     ssh debian@<ip address of BBB>
 
 In the `$HOME` folder is this repository. Running `git pull` in that folder
 will update the code to the latest version.
+
+    cd urban-heartbeat-kit
+    git pull
 
 ### Configuring Startup
 
