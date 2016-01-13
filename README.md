@@ -34,6 +34,8 @@ Software
 
 #### BleGateway
 
+<img src="https://raw.githubusercontent.com/terraswarm/urban-heartbeat-kit/master/media/ble_gateway_diagram.jpg" width="70%">
+
 The [BleGateway](https://github.com/lab11/gateway/tree/master/software/ble-gateway)
 provides a general way to collect data from BLE devices.
 It's organized as a core gateway service that publishes formatted data packets
