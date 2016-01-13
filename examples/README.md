@@ -4,12 +4,19 @@ BleGateway Usage Examples
 This folder contains sample code for retreiving data from the gateway
 in both [Node.js](https://nodejs.org/en/) and [Python](https://www.python.org/).
 
+Initial Setup
+-------------
+
+Clone this repo to get the example scripts.
+
+    git clone https://github.com/terraswarm/urban-heartbeat-kit.git
+    cd urban-heartbeat-kit/examples
+
 Node.js
 -------
 
 Install the needed dependencies:
 
-    cd software/examples
     npm install
     
 - **node-broadcast.js**: Run this to receive broadcast UDP packets.
@@ -34,4 +41,5 @@ Each file will print out its dependencies and how to install them.
 - **python-broadcast.py**: Make sure you are on the same LAN.
 - **python-mqtt.py**: Update the `HOST` variable.
 - **python-websocket.py**: Update the `HOST` variable.
+- **python2-gdp.py**: Will publish the gateway data to a GDP log.
 
