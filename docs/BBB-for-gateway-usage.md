@@ -71,6 +71,15 @@ LAN). For code examples, look
     Packets are sent as JSON encoded strings in UDP packets to the broadcast
     address `255.255.255.255` on port `3002`.
 
+- **Retrieving from GDP**
+
+    If you have the GDP client installed (or you can run this on the BeagleBone
+    Black) you can query packets from GDP by reading the correct log. The log
+    name is `org.terraswarm.gatewayv1.<MAC address of gateway>`. For example:
+    `org.terraswarm.gatewayv1.84eb1898b4a8`.
+    
+        gdp-reader -s org.terraswarm.gatewayv1.84eb1898b4a8
+
 
 Hacking the Gateway
 -------------------
