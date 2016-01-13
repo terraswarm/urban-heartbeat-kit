@@ -29,8 +29,10 @@ BeagleBone Black, there are two options:
  * [from scratch](docs/BBB-gateway-setup-from-scratch.md)
 
 
-Software
---------
+### Software
+
+Some gateway-specific software is pre-loaded on the BBB.
+
 
 #### BleGateway
 
