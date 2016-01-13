@@ -85,7 +85,7 @@ LAN). For code examples, look
     name is `org.terraswarm.gatewayv1.<MAC address of gateway>`. For example:
     `org.terraswarm.gatewayv1.84eb1898b4a8`.
     
-        gdp-reader -s org.terraswarm.gatewayv1.84eb1898b4a8
+        gdp-reader -s org.terraswarm.gatewayv1.<BBB MAC address>
 
 
 Hacking the Gateway
