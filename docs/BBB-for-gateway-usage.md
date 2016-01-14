@@ -96,6 +96,8 @@ run directly on the gateway. To connect:
 
     ssh debian@<ip address of BBB>
 
+See the TerraSwarm wiki for the password.
+
 In the `$HOME` folder is this repository. Running `git pull` in that folder
 will update the code to the latest version.
 
