@@ -15,7 +15,7 @@ and distribute the data to many applications.
   - [Configuring Startup](#configuring-startup)
   - [WiFi Interface](#wifi-interface)
   - [802.15.4 Interface](#802154-interface)
-  - [Audo/Microphone Support](#audomicrophone-support)
+  - [Audio/Microphone Support](#audomicrophone-support)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -179,7 +179,7 @@ fully supported by the Linux kernel.
 
 For instructions, see the [GAP Readme](https://github.com/lab11/gap#sniffing-154-packets).
 
-### Audo/Microphone Support
+### Audio/Microphone Support
 
 View that the microphone is attached:
 
