@@ -39,11 +39,18 @@ function count_dots_in_string (str) {
  * mDNS
  ******************************************************************************/
 
+// Setup custom sequence to fix resolve errors
 var sequence = [
-	mdns.rst.DNSServiceResolve(),
-	mdns.rst.getaddrinfo({families: [4]}),
-	mdns.rst.getaddrinfo({families: [6]})
+	mdns.rst.DNSServiceResolve()
 ];
+if ('DNSServiceGetAddrInfo' in mdns.dns_sd) {
+	// I believe this means we are on Mac OS X
+	sequence.push(rst.DNSServiceGetAddrInfo());
+} else {
+	// Linux, split up IPv4 and IPv6 lookup
+	sequence.push(mdns.rst.getaddrinfo({families: [4]}));
+	sequence.push(mdns.rst.getaddrinfo({families: [6]}));
+}
 var mDNSbrowser = mdns.createBrowser(mdns.tcp('workstation'), {resolverSequence: sequence});
 
 function handle_mdns_service (service) {
