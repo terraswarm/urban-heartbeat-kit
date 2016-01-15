@@ -1,10 +1,12 @@
+#!/usr/bin/env node
+
 var url = require('url');
 
 var colors = require('colors');
 var debug = require('debug')('find-my-gateway');
 var ebs = require('eddystone-beacon-scanner/lib/eddystone-beacon-scanner');
-
 var mdns = require('mdns');
+var ssdp = require('node-ssdp');
 var pad = require('pad');
 
 /*******************************************************************************
@@ -98,6 +100,28 @@ EddystoneBeaconScanner.on('found', function(beacon) {
 
 
 /*******************************************************************************
+ * SSDP
+ ******************************************************************************/
+
+var CUSTOM_GATEWAY_URN = 'urn:TerraSwarm:gateway:1';
+
+var ssdpClient = new ssdp.Client();
+ssdpClient.on('response', function (headers, statusCode, rinfo) {
+	if (headers.ST == CUSTOM_GATEWAY_URN) {
+		var ipv4 = '';
+		var ipv6 = '';
+
+		if (rinfo.family == 'IPv4') {
+			ipv4 = rinfo.address;
+		} else if (rinfo.family == 'IPv6') {
+			ipv6 = rinfo.address;
+		}
+		display_beaglebone(ipv4, ipv6, '', 'SSDP/UPnP');
+	}
+});
+
+
+/*******************************************************************************
  * Start
  ******************************************************************************/
 
@@ -106,3 +130,4 @@ display_header();
 
 mDNSbrowser.start();
 EddystoneBeaconScanner.startScanning();
+ssdpClient.search(CUSTOM_GATEWAY_URN);
