@@ -45,7 +45,7 @@ var sequence = [
 ];
 if ('DNSServiceGetAddrInfo' in mdns.dns_sd) {
 	// I believe this means we are on Mac OS X
-	sequence.push(rst.DNSServiceGetAddrInfo());
+	sequence.push(mdns.rst.DNSServiceGetAddrInfo());
 } else {
 	// Linux, split up IPv4 and IPv6 lookup
 	sequence.push(mdns.rst.getaddrinfo({families: [4]}));
