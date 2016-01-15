@@ -8,14 +8,13 @@ Information about the preliminary gateway kit for the Urban Heartbeat workshop
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
-- [Urban Heartbeat Kit](#urban-heartbeat-kit)
-  - [Gateway](#gateway)
-    - [Hardware](#hardware)
-    - [Software](#software)
-      - [BleGateway](#blegateway)
-      - [GDP Client](#gdp-client)
-    - [Interacting with the BBB](#interacting-with-the-bbb)
-  - [Sensors](#sensors)
+- [Gateway](#gateway)
+  - [Hardware](#hardware)
+  - [Software](#software)
+    - [BleGateway](#blegateway)
+    - [GDP Client](#gdp-client)
+  - [Interacting with the BBB](#interacting-with-the-bbb)
+- [Sensors](#sensors)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

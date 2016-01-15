@@ -8,10 +8,9 @@ in both [Node.js](https://nodejs.org/en/) and [Python](https://www.python.org/).
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
-- [BleGateway Usage Examples](#blegateway-usage-examples)
-  - [Initial Setup](#initial-setup)
-  - [Node.js](#nodejs)
-  - [Python](#python)
+- [Initial Setup](#initial-setup)
+- [Node.js](#nodejs)
+- [Python](#python)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
