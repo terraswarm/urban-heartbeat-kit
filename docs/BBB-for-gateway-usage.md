@@ -1,3 +1,19 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [Using the BeagleBone Black - Gateway Version](#using-the-beaglebone-black---gateway-version)
+  - [Initial Setup](#initial-setup)
+  - [Find the IP Address of the BBB](#find-the-ip-address-of-the-bbb)
+  - [Getting Data from BLE Devices On Your Computer](#getting-data-from-ble-devices-on-your-computer)
+  - [Hacking the Gateway](#hacking-the-gateway)
+    - [Configuring Startup](#configuring-startup)
+    - [WiFi Interface](#wifi-interface)
+    - [802.15.4 Interface](#802154-interface)
+    - [Audo/Microphone Support](#audomicrophone-support)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 Using the BeagleBone Black - Gateway Version
 ============================================
 
