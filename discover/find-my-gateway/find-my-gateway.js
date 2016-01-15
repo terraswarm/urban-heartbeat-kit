@@ -39,8 +39,14 @@ function count_dots_in_string (str) {
  * mDNS
  ******************************************************************************/
 
-var mDNSbrowser = mdns.createBrowser(mdns.tcp('workstation'));
-mDNSbrowser.on('serviceUp', function(service) {
+var sequence = [
+	mdns.rst.DNSServiceResolve(),
+	mdns.rst.getaddrinfo({families: [4]}),
+	mdns.rst.getaddrinfo({families: [6]})
+];
+var mDNSbrowser = mdns.createBrowser(mdns.tcp('workstation'), {resolverSequence: sequence});
+
+function handle_mdns_service (service) {
 	if (service.name.startsWith('beaglebone')) {
 		// Found a BeagleBone on MDNS
 		var mac = '';
@@ -65,10 +71,16 @@ mDNSbrowser.on('serviceUp', function(service) {
 		// Print what we found
 		display_beaglebone(ipv4, ipv6, mac, 'mDNS');
 	}
-});
+}
 
-mDNSbrowser.on('error', function (err) {
+mDNSbrowser.on('serviceUp', handle_mdns_service);
+
+mDNSbrowser.on('error', function (err, service) {
 	debug(err);
+
+	// Likely this is an error with looking up IPv6 addresses.
+	// We still want to display the ipv4 address though.
+	handle_mdns_service(service);
 });
 
 
@@ -87,7 +99,6 @@ ebs.prototype.parseBeacon = function (peripheral) {
 var EddystoneBeaconScanner = new ebs();
 
 EddystoneBeaconScanner.on('found', function(beacon) {
-	// console.log(beacon);
 	if (beacon.type == 'url' && beacon.advertisement.localName == 'beaglebone') {
 		var parsed_url = url.parse(beacon.url);
 		var ip = parsed_url.host;
