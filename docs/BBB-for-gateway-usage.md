@@ -27,9 +27,11 @@ To find it, you have a few options:
 [Summon](https://play.google.com/store/apps/details?id=edu.umich.eecs.lab11.summon)
 app or the [Nordic BLE App](https://play.google.com/store/apps/details?id=no.nordicsemi.android.mcp)
 and look for a device with the name "Beaglebone". Both apps will display the IP address.
+
 2. **Try using the mDNS URL**: If mDNS lookup is working, and you are on the same
 network as the BBB, you should be able to view [beaglebone.local](http://beaglebone.local/).
-2. **Use the find-my-gatway.js script**: We have a node.js script that searches for the BBB
+
+3. **Use the find-my-gatway.js script**: We have a node.js script that searches for the BBB
 on all of the protocols. To use:
     1. Install [node.js](https://nodejs.org/en/download/). If you are cool with
     running a downloaded shell script as root you can do this on Ubuntu:
@@ -49,7 +51,8 @@ on all of the protocols. To use:
     4. You should be able to scan for all nearby gateways:
     
             ./find-my-gateway.js
-3. **Use the discovery protocols directly**: If you have a tool you like for
+            
+4. **Use the discovery protocols directly**: If you have a tool you like for
 any of the discovery protocols, you can use that directly.
     1. **mDNS**: Look for services matching `_workstation._tcp` with the name
     `beaglebone`. On Linux:
@@ -58,7 +61,8 @@ any of the discovery protocols, you can use that directly.
    2. **SSDP/UPnP**: Look for the `urn:TerraSwarm:gateway:1` profile.
    3. **BLE/Eddystone**: Scan for BLE advertisements with device
    name `beaglebone`. The IP address is encoded in them as ASCII.
-4. **Use nmap**: Scan for all devices with port 3001 (the websockets port)
+
+5. **Use nmap**: Scan for all devices with port 3001 (the websockets port)
 open:
 
         nmap -sV -p3001 --open <any ip address on the BBB network>/24
