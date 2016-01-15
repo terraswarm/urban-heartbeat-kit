@@ -15,17 +15,52 @@ Find the IP Address of the BBB
 ------------------------------
 
 The first step is to find the IP address of the BBB. To help with this,
-the BBB is broadcasting over BLE its IP address. To read the IP address:
+the BBB is identifying itself on:
 
-- **Android**: Download the [Summon](https://play.google.com/store/apps/details?id=edu.umich.eecs.lab11.summon)
+- mDNS
+- SSDP/UPnP
+- BLE/Eddystone
+
+To find it, you have a few options:
+
+1. **Summon app for Android**: Download the 
+[Summon](https://play.google.com/store/apps/details?id=edu.umich.eecs.lab11.summon)
 app or the [Nordic BLE App](https://play.google.com/store/apps/details?id=no.nordicsemi.android.mcp)
 and look for a device with the name "Beaglebone". Both apps will display the IP address.
-- **Mac OS X**: Don't have a super easy option here. Apple provides some
-[tools](https://www.google.com/search?q=mac+os+x+hardware+io+tools&ie=utf-8&oe=utf-8)
-but they are pretty low-level.
-- **Linux**: Don't have a good solution here. Nmap may work: `nmap -sV -p22 <your ip address>/24`.
-- **iOS**: BLE scanning apps exist, but they don't support Eddystone. You can use one
-and covert the raw bytes to an ASCII IP address yourself if you wish....
+2. **Use the find-my-gatway.js script**: We have a node.js script that searches for the BBB
+on all of the protocols. To use:
+    1. Install [node.js](https://nodejs.org/en/download/). If you are cool with
+    running a downloaded shell script as root you can do this on Ubuntu:
+
+            curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+            sudo apt-get install -y nodejs
+    2. On Linux, make sure you have other dependencies installed:
+    
+            sudo apt-get install bluetooth bluez libbluetooth-dev libudev-dev avahi-daemon libavahi-compat-libdnssd-dev
+        Also setup node.js so it can look for BLE packets without being root:
+        
+            sudo setcap cap_net_raw+eip $(eval readlink -f `which node`)
+    3. Setup the dependencies for the script:
+    
+            cd urban-heartbeat-kit/discover/find-my-gateway
+            npm install
+    4. You should be able to scan for all nearby gateways:
+    
+            ./find-my-gateway.js
+3. **Use the discovery protocols directly**: If you have a tool you like for
+any of the discovery protocols, you can use that directly.
+    1. **mDNS**: Look for services matching `_workstation._tcp` with the name
+    `beaglebone`. On Linux:
+
+            avahi-browse _workstation._tcp
+   2. **SSDP/UPnP**: Look for the `urn:TerraSwarm:gateway:1` profile.
+   3. **BLE/Eddystone**: Scan for BLE advertisements with device
+   name `beaglebone`. The IP address is encoded in them as ASCII.
+4. **Use nmap**: Scan for all devices with port 3001 (the websockets port)
+open:
+
+        nmap -sV -p3001 --open <any ip address on the BBB network>/24
+
 
 Getting Data from BLE Devices On Your Computer
 ----------------------------------------------
