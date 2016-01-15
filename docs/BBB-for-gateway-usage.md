@@ -27,6 +27,8 @@ To find it, you have a few options:
 [Summon](https://play.google.com/store/apps/details?id=edu.umich.eecs.lab11.summon)
 app or the [Nordic BLE App](https://play.google.com/store/apps/details?id=no.nordicsemi.android.mcp)
 and look for a device with the name "Beaglebone". Both apps will display the IP address.
+2. **Try using the mDNS URL**: If mDNS lookup is working, and you are on the same
+network as the BBB, you should be able to view [beaglebone.local](http://beaglebone.local/).
 2. **Use the find-my-gatway.js script**: We have a node.js script that searches for the BBB
 on all of the protocols. To use:
     1. Install [node.js](https://nodejs.org/en/download/). If you are cool with
