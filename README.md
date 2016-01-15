@@ -4,6 +4,21 @@ Urban Heartbeat Kit
 Information about the preliminary gateway kit for the Urban Heartbeat workshop
 (2016/01/13).
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [Urban Heartbeat Kit](#urban-heartbeat-kit)
+  - [Gateway](#gateway)
+    - [Hardware](#hardware)
+    - [Software](#software)
+      - [BleGateway](#blegateway)
+      - [GDP Client](#gdp-client)
+    - [Interacting with the BBB](#interacting-with-the-bbb)
+  - [Sensors](#sensors)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 Gateway
 ----------
 

@@ -1,24 +1,23 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
-
-- [Using the BeagleBone Black - Gateway Version](#using-the-beaglebone-black---gateway-version)
-  - [Initial Setup](#initial-setup)
-  - [Find the IP Address of the BBB](#find-the-ip-address-of-the-bbb)
-  - [Getting Data from BLE Devices On Your Computer](#getting-data-from-ble-devices-on-your-computer)
-  - [Hacking the Gateway](#hacking-the-gateway)
-    - [Configuring Startup](#configuring-startup)
-    - [WiFi Interface](#wifi-interface)
-    - [802.15.4 Interface](#802154-interface)
-    - [Audo/Microphone Support](#audomicrophone-support)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 Using the BeagleBone Black - Gateway Version
 ============================================
 
 The gateway is configured to accept data from many sensors
 and distribute the data to many applications.
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [Initial Setup](#initial-setup)
+- [Find the IP Address of the BBB](#find-the-ip-address-of-the-bbb)
+- [Getting Data from BLE Devices On Your Computer](#getting-data-from-ble-devices-on-your-computer)
+- [Hacking the Gateway](#hacking-the-gateway)
+  - [Configuring Startup](#configuring-startup)
+  - [WiFi Interface](#wifi-interface)
+  - [802.15.4 Interface](#802154-interface)
+  - [Audo/Microphone Support](#audomicrophone-support)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 Initial Setup
 -------------
@@ -39,7 +38,7 @@ the BBB is identifying itself on:
 
 To find it, you have a few options:
 
-1. **Summon app for Android**: Download the 
+1. **Summon app for Android**: Download the
 [Summon](https://play.google.com/store/apps/details?id=edu.umich.eecs.lab11.summon)
 app or the [Nordic BLE App](https://play.google.com/store/apps/details?id=no.nordicsemi.android.mcp)
 and look for a device with the name "Beaglebone". Both apps will display the IP address.
@@ -55,19 +54,19 @@ on all of the protocols. To use:
             curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
             sudo apt-get install -y nodejs
     2. On Linux, make sure you have other dependencies installed:
-    
+
             sudo apt-get install bluetooth bluez libbluetooth-dev libudev-dev avahi-daemon libavahi-compat-libdnssd-dev
         Also setup node.js so it can look for BLE packets without being root:
-        
+
             sudo setcap cap_net_raw+eip $(eval readlink -f `which node`)
     3. Setup the dependencies for the script:
-    
+
             cd urban-heartbeat-kit/discover/find-my-gateway
             npm install
     4. You should be able to scan for all nearby gateways:
-    
+
             ./find-my-gateway.js
-            
+
 4. **Use the discovery protocols directly**: If you have a tool you like for
 any of the discovery protocols, you can use that directly.
     1. **mDNS**: Look for services matching `_workstation._tcp` with the name
@@ -105,7 +104,7 @@ LAN). For code examples, look
     To view a very simple UI with the recent data, go to:
 
         http://<ip address of the BBB>
-    
+
     This will display all of the devices the gateway has seen and their
     last ten packets.
 
@@ -114,7 +113,7 @@ LAN). For code examples, look
     To retreive as a websocket stream, connect a websocket client to
 
         ws://<ip address of the BBB>:3001
-    
+
     All packets the gateway sees will be sent to each client connected
     via websockets.
 
@@ -141,7 +140,7 @@ LAN). For code examples, look
     Black) you can query packets from GDP by reading the correct log. The log
     name is `org.terraswarm.gatewayv1.<MAC address of gateway>`. For example:
     `org.terraswarm.gatewayv1.84eb1898b4a8`.
-    
+
         gdp-reader -s org.terraswarm.gatewayv1.<BBB MAC address>
 
 
@@ -178,7 +177,7 @@ To stop a service:
 To restart a service:
 
     sudo systemctl restart <service name>
-    
+
 To stop a service from running at boot:
 
     sudo systemctl disable <service name>
@@ -202,7 +201,7 @@ For instructions, see the [GAP Readme](https://github.com/lab11/gap#sniffing-154
 View that the microphone is attached:
 
     arecord -l
-    
+
 Record an audio sample:
 
     arecord -D hw:1 -r 44100 -f S16_LE sound.wav

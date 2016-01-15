@@ -1,6 +1,17 @@
 BeagleBone Black Setup for Gateway
 ==================================
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [BeagleBone Black Setup for Gateway](#beaglebone-black-setup-for-gateway)
+  - [Optional: Install Node-RED](#optional-install-node-red)
+  - [Audio](#audio)
+  - [GDP](#gdp)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 This is the setup directions for creating a gateway out of a
 BeagleBone Black. These steps were originally designed for the
 Urban Heartbeat Workshop (January 13, 2016).
@@ -107,9 +118,9 @@ The GAP overlay and others are setup in a repository also maintained by RCN.
 
         [Install]
         WantedBy=multi-user.target
-        
+
     Then:
-    
+
         sudo useradd mosquitto
         sudo systemctl daemon-reload
         sudo systemctl enable mosquitto
@@ -186,7 +197,7 @@ Optional: Install Node-RED
 2. Install Node-RED.
 
         sudo npm install -g --unsafe-perm  node-red
-    
+
     At this point, Node-RED is installed and ready to run. However,
     we want to run Node-RED as a system service so that it starts
     on boot and restarts automatically after encountering issues.
@@ -197,7 +208,7 @@ Optional: Install Node-RED
         cd ~/.node-red
         npm install node-red-node-beaglebone
 
-7. Configure Node-RED to run as a service. Create the file 
+7. Configure Node-RED to run as a service. Create the file
 `/etc/systemd/system/node-red.service` with the following contents:
 
         [Unit]
@@ -223,12 +234,12 @@ Optional: Install Node-RED
 
         sudo systemctl start node-red
 
-    Test that Node-RED is running by navigating to `http://<Beaglebone IP>:1880`. 
-    
+    Test that Node-RED is running by navigating to `http://<Beaglebone IP>:1880`.
+
 9. You can password-protect your Node-RED instance, add HTTPS support,
 and make other configuration changes by modifying
 `/home/debian/.node-red/settings.js` and restarting the service with
-`sudo systemctl restart node-red`. 
+`sudo systemctl restart node-red`.
 
 
 Audio
@@ -245,7 +256,7 @@ GDP
 1. Get the source repo.
 
         git clone https://repo.eecs.berkeley.edu/git/projects/swarmlab/gdp.git
-    
+
 2. Prep the system.
 
         cd gdp

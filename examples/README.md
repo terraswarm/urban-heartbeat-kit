@@ -4,6 +4,17 @@ BleGateway Usage Examples
 This folder contains sample code for retreiving data from the gateway
 in both [Node.js](https://nodejs.org/en/) and [Python](https://www.python.org/).
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [BleGateway Usage Examples](#blegateway-usage-examples)
+  - [Initial Setup](#initial-setup)
+  - [Node.js](#nodejs)
+  - [Python](#python)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 Initial Setup
 -------------
 
@@ -18,7 +29,7 @@ Node.js
 Install the needed dependencies:
 
     npm install
-    
+
 - **node-broadcast.js**: Run this to receive broadcast UDP packets.
 Make sure you are on the same LAN as the gateway.
 - **node-mqtt.js**: Receive packets from the MQTT broker. Make sure

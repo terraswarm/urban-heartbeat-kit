@@ -1,6 +1,14 @@
 Setup Gateway BBB from Pre-built Image
 =====================================
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [Setup Gateway BBB from Pre-built Image](#setup-gateway-bbb-from-pre-built-image)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 Rather than starting from a raw image and running all of the
 steps to get the gateway running on a new BBB, a BBB can be flashed
 directly with a pre-built image we have made.
