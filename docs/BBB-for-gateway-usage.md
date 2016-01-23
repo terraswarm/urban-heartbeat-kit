@@ -46,7 +46,7 @@ and look for a device with the name "Beaglebone". Both apps will display the IP 
 2. **Try using the mDNS URL**: If mDNS lookup is working, and you are on the same
 network as the BBB, you should be able to view [beaglebone.local](http://beaglebone.local/).
 
-3. **Use the find-my-gatway.js script**: We have a
+3. **Use the find-my-gateway.js script**: We have a
 [node.js script](https://github.com/terraswarm/urban-heartbeat-kit/tree/master/discover/find-my-gateway)
 that searches for the BBB on all of the protocols.
 
