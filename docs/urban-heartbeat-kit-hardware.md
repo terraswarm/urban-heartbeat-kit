@@ -18,5 +18,5 @@ Quantity  | Item                 | URL                                          
 2         | PowerBlade Sensors   | [PowerBlade](https://github.com/lab11/powerblade)                | Not included in "Slim" kit
 1         | Ethernet Cable       |                                                                  | Not included in "Slim" kit
 1         | Cover Sheet          |                                                                  | Included link to Urban Heartbeat repo and Summon app.
-
+1         | Box                  | [ULINE](http://www.uline.com/Product/Detail/S-9848/Literature-Mailers/7-1-8-x-4-1-2-x-3-White-Literature-Mailers) | 
 
