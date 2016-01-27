@@ -42,3 +42,17 @@ the edison over UART with something like:
 
         su
         apt-get install sudo
+
+7. Allow edison to sudo:
+
+        usermod -a -G sudo edison
+        # exit su with ctrl+d
+
+8. Install dependencies
+
+        sudo apt-get install vim bluetooth bluez libbluetooth-dev libudev-dev
+
+8. Install new node.js
+
+        curl -sL https://deb.nodesource.com/setup_5.x | sudo bash -
+        sudo apt-get install nodejs
