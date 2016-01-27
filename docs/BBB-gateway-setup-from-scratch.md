@@ -5,9 +5,6 @@ BeagleBone Black Setup for Gateway
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
-- [Optional: Install Node-RED](#optional-install-node-red)
-- [Audio](#audio)
-- [GDP](#gdp)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
