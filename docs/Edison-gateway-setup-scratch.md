@@ -52,10 +52,14 @@ the edison over UART with something like:
 
         sudo apt-get install vim bluetooth bluez libbluetooth-dev libudev-dev
 
-8. Install new node.js
 
-        curl -sL https://deb.nodesource.com/setup_5.x | sudo bash -
-        sudo apt-get install nodejs
+Remaining Setup
+---------------
+
+See the
+[shared instructions](https://github.com/terraswarm/urban-heartbeat-kit/blob/master/docs/gateway-setup-scratch-common.md).
+
+
 
 
 
