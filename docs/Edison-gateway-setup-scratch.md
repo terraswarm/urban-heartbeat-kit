@@ -56,3 +56,12 @@ the edison over UART with something like:
 
         curl -sL https://deb.nodesource.com/setup_5.x | sudo bash -
         sudo apt-get install nodejs
+
+
+
+Copying image
+-------------
+
+Found some good instructions
+[here](https://communities.intel.com/message/258584#258584)
+
