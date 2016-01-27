@@ -24,4 +24,21 @@ on the board. Make sure the switch near the USB headers is flipped to the left.
         cd toFlash
         sudo ./flashall.sh
         
-        
+4. Plug in a micro USB cable to the left micro USB port. Connect to
+the edison over UART with something like:
+
+        miniterm.py /dev/ttyUSB0 115200
+
+4. Login with
+
+        user: edison
+        pass: edison
+
+5. Change password:
+
+        passwd
+
+6. Become root to install sudo
+
+        su
+        apt-get install sudo
