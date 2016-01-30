@@ -67,6 +67,19 @@ Software Setup
         sudo systemctl daemon-reload
         sudo systemctl enable mosquitto
 
+13. Setup a mDNS entry for MQTT so it can be discovered. Create
+`/etc/avahi/services/mqtt.service` and add:
+
+        <?xml version="1.0" standalone='no'?>
+        <!DOCTYPE service-group SYSTEM "avahi-service.dtd">
+        <service-group>
+          <name>MQTT Broker</name>
+          <service>
+            <type>_mqtt._tcp</type>
+            <port>1883</port>
+          </service>
+        </service-group>
+
 13. Install Python 3.5.
 
         wget https://www.python.org/ftp/python/3.5.1/Python-3.5.1.tgz
