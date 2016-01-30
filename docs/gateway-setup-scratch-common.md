@@ -103,6 +103,10 @@ Software Setup
 
         usermod -a -G dialout debian
 
+18. Make sure we can do IPv6 mDNS lookups.
+
+        sudo sed -i "s/mdns4_minimal/mdns_minimal/g" /etc/nsswitch.conf
+
 19. Clean up home directory
 
         rm -rf /home/debian/*
