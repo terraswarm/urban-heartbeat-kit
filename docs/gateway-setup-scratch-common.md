@@ -134,6 +134,8 @@ Software Setup
         pushd gateway/software/ble-gateway-publish && npm i && popd
         pushd gateway/software/ble-gateway-server && npm i && popd
         pushd gateway/software/adv-gateway-ip && npm i && popd
+        pushd gateway/software/ble-gateway-mqtt-topics && npm i && popd
+        pushd gateway/software/ble-gateway-mqtt-emoncms && npm i && popd
         pushd urban-heartbeat-kit/examples && npm i && popd
         pushd urban-heartbeat-kit/discover/gateway-ssdp && npm i && popd
 
@@ -148,6 +150,7 @@ Software Setup
         sudo systemctl enable adv-gateway-ip
         sudo systemctl enable gateway-gdp-publish
         sudo systemctl enable adv-gateway-ssdp
+        sudo systemctl enable ble-gateway-mqtt-topics
 
 
 Optional: Install Node-RED
