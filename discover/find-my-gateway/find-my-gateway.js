@@ -106,7 +106,7 @@ ebs.prototype.parseBeacon = function (peripheral) {
 var EddystoneBeaconScanner = new ebs();
 
 EddystoneBeaconScanner.on('found', function(beacon) {
-	if (beacon.type == 'url' && beacon.advertisement.localName == 'beaglebone') {
+	if (beacon.type == 'url' && beacon.advertisement.localName == 'swarmgateway') {
 		var parsed_url = url.parse(beacon.url);
 		var ip = parsed_url.host;
 		// Do a quick sanity check
