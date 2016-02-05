@@ -156,6 +156,14 @@ Software Setup
         sudo systemctl enable adv-gateway-ssdp
         sudo systemctl enable ble-gateway-mqtt-topics
 
+23. Configure LEDs at boot:
+
+    BBB:
+
+        # vim /etc/rc.local. Add:
+        /home/debian/urban-heartbeat-kit/scripts/bbb_leds_configure.sh
+
+
 
 Optional: Install Node-RED
 --------------------------
