@@ -8,6 +8,10 @@ Software Setup
 --------------
 
 
+1. Change hostname. Edit `/etc/hostname` and make it:
+
+        swarmgateway
+
 1. Experimental: Install MQTT:
 
         wget http://repo.mosquitto.org/debian/mosquitto-repo.gpg.key

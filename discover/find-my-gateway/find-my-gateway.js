@@ -22,8 +22,8 @@ function display_header () {
 	console.log(header);
 }
 
-function display_beaglebone (ipv4_addr, ipv6_addr, mac_address, service) {
-	var out = pad('BeagleBone', 20) +
+function display_gateway (ipv4_addr, ipv6_addr, mac_address, service) {
+	var out = pad('SwarmGateway', 20) +
 	          pad(ipv4_addr, 17) +
 	          pad(ipv6_addr, 41) +
 	          pad(mac_address, 19) +
@@ -54,8 +54,8 @@ if ('DNSServiceGetAddrInfo' in mdns.dns_sd) {
 var mDNSbrowser = mdns.createBrowser(mdns.tcp('workstation'), {resolverSequence: sequence});
 
 function handle_mdns_service (service) {
-	if (service.name.startsWith('beaglebone')) {
-		// Found a BeagleBone on MDNS
+	if (service.name.startsWith('swarmgateway')) {
+		// Found a SwarmGateway on MDNS
 		var mac = '';
 		var ipv4 = '';
 		var ipv6 = '';
@@ -76,7 +76,7 @@ function handle_mdns_service (service) {
 		}
 
 		// Print what we found
-		display_beaglebone(ipv4, ipv6, mac, 'mDNS');
+		display_gateway(ipv4, ipv6, mac, 'mDNS');
 	}
 }
 
@@ -111,7 +111,7 @@ EddystoneBeaconScanner.on('found', function(beacon) {
 		var ip = parsed_url.host;
 		// Do a quick sanity check
 		if (ip.length >= 7 && ip.length <= 15 && count_dots_in_string(ip) == 3) {
-			display_beaglebone(ip, '', '', 'BLE Eddystone')
+			display_gateway(ip, '', '', 'BLE Eddystone')
 		}
 	}
 });
@@ -134,7 +134,7 @@ ssdpClient.on('response', function (headers, statusCode, rinfo) {
 		} else if (rinfo.family == 'IPv6') {
 			ipv6 = rinfo.address;
 		}
-		display_beaglebone(ipv4, ipv6, '', 'SSDP/UPnP');
+		display_gateway(ipv4, ipv6, '', 'SSDP/UPnP');
 	}
 });
 
@@ -143,7 +143,7 @@ ssdpClient.on('response', function (headers, statusCode, rinfo) {
  * Start
  ******************************************************************************/
 
-console.log('Searching for BeagleBones...\n');
+console.log('Searching for SwarmGateways...\n');
 display_header();
 
 mDNSbrowser.start();
