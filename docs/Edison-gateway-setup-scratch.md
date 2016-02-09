@@ -43,9 +43,13 @@ the edison over UART with something like:
         su
         apt-get install sudo
 
-7. Allow edison to sudo:
+7. Create "debian" user to match the BBB.
 
-        usermod -a -G sudo edison
+        adduser debian
+
+7. Allow `debian` to sudo:
+
+        usermod -a -G sudo debian
         # exit su with ctrl+d
 
 8. Install dependencies
