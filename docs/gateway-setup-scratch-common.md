@@ -23,8 +23,8 @@ Software Setup
         sudo apt-key add mosquitto-repo.gpg.key
         cd /etc/apt/sources.list.d/
         sudo wget http://repo.mosquitto.org/debian/mosquitto-jessie.list
-        apt-get update
-        apt-get install mosquitto
+        sudo apt-get update
+        sudo apt-get install mosquitto
 
 11. Worked on BBB: Install libwebsockets for MQTT.
 
