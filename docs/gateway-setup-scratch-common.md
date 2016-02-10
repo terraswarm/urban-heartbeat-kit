@@ -11,6 +11,11 @@ Software Setup
 1. Change hostname. Edit `/etc/hostname` and make it:
 
         swarmgateway
+        
+2. Add swarmgateway to hosts:
+
+        sudo vim /etc/hosts
+          127.0.1.1    swarmgateway
 
 1. Experimental: Install MQTT:
 
