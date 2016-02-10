@@ -119,8 +119,7 @@ Software Setup
 
     BBB:
 
-        # vim /etc/rc.local. Add:
-        /home/debian/urban-heartbeat-kit/scripts/bbb_leds_configure.sh
+        sudo sed -i "14i # Turn off the annoying blinking LEDs.\n/home/debian/urban-heartbeat-kit/scripts/bbb_leds_configure.sh\n" /etc/rc.local
 
 
 
