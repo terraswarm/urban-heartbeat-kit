@@ -77,7 +77,7 @@ Software Setup
 
 18. Add user to dialout (for serial permissions)
 
-        usermod -a -G dialout debian
+        sudo usermod -a -G dialout debian
 
 18. Make sure we can do IPv6 mDNS lookups.
 
