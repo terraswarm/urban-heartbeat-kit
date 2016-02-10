@@ -17,7 +17,7 @@ Software Setup
         sudo vim /etc/hosts
           127.0.1.1    swarmgateway
 
-1. Experimental: Install MQTT:
+1. Install MQTT:
 
         wget http://repo.mosquitto.org/debian/mosquitto-repo.gpg.key
         sudo apt-key add mosquitto-repo.gpg.key
