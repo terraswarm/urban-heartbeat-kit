@@ -72,7 +72,7 @@ Software Setup
         sudo apt-get install locales
         sudo locale-gen en_us.UTF-8
         sudo dpkg-reconfigure locales
-            Select "en_US.UTF-8 UTF-8" from list and hit enter
+            Highlight "en_US.UTF-8 UTF-8" from list, press space and then enter
             Select "en_US.UTF-8" and hit enter
 
 18. Add user to dialout (for serial permissions)
