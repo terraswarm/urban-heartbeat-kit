@@ -56,6 +56,13 @@ the edison over UART with something like:
 
         sudo apt-get install vim bluetooth bluez libbluetooth-dev libudev-dev
 
+9. Install `mraa`:
+
+        git clone https://github.com/intel-iot-devkit/mraa.git
+        mkdir mraa/build && cd $_
+        cmake .. -DBUILDSWIGNODE=OFF
+        make
+        sudo make install
 
 Remaining Setup
 ---------------
