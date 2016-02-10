@@ -94,11 +94,13 @@ Software Setup
 
 21. Install gateway dependencies.
 
-        pushd gateway/software/ble-gateway-publish && npm i && popd
-        pushd gateway/software/ble-gateway-server && npm i && popd
         pushd gateway/software/adv-gateway-ip && npm i && popd
-        pushd gateway/software/ble-gateway-mqtt-topics && npm i && popd
-        pushd gateway/software/ble-gateway-mqtt-emoncms && npm i && popd
+        pushd gateway/software/ble-address-sniffer-mqtt && npm i && popd
+        pushd gateway/software/ble-gateway-mqtt && npm i && popd
+        pushd gateway/software/gateway-mqtt-emoncms && npm i && popd
+        pushd gateway/software/gateway-mqtt-topics && npm i && popd
+        pushd gateway/software/gateway-publish && npm i && popd
+        pushd gateway/software/gateway-server && npm i && popd
         pushd urban-heartbeat-kit/examples && npm i && popd
         pushd urban-heartbeat-kit/discover/gateway-ssdp && npm i && popd
 
@@ -108,12 +110,11 @@ Software Setup
         sudo cp urban-heartbeat-kit/systemd/* /etc/systemd/system/
         sudo systemctl daemon-reload
         sudo systemctl disable lighttpd
-        sudo systemctl enable ble-gateway-publish
-        sudo systemctl enable ble-gateway-server
+        sudo systemctl enable ble-address-sniffer-mqtt
+        sudo systemctl enable ble-gateway-mqtt
         sudo systemctl enable adv-gateway-ip
-        sudo systemctl enable gateway-gdp-publish
         sudo systemctl enable adv-gateway-ssdp
-        sudo systemctl enable ble-gateway-mqtt-topics
+        sudo systemctl enable gateway-*
 
 23. Configure LEDs at boot:
 
