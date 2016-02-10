@@ -26,55 +26,9 @@ Software Setup
         sudo apt-get update
         sudo apt-get install mosquitto
 
-11. Worked on BBB: Install libwebsockets for MQTT.
+11. Setup config for mosquitto:
 
-        wget http://git.warmcat.com/cgi-bin/cgit/libwebsockets/snapshot/libwebsockets-1.5-chrome47-firefox41.tar.gz
-        tar xf libwebsockets-1.5-chrome47-firefox41.tar.gz
-        cd libwebsockets-1.5-chrome47-firefox41
-        mkdir build
-        cd build
-        cmake ..
-        make
-        sudo make install
-
-12. Worked on BBB: Install MQTT.
-
-        wget http://mosquitto.org/files/source/mosquitto-1.4.5.tar.gz
-        tar xf mosquitto-1.4.5.tar.gz
-        cd mosquitto-1.4.5
-        sed -i s/WITH_WEBSOCKETS:=no/WITH_WEBSOCKETS:=yes/g config.mk
-        make
-        sudo make install
-        sudo ldconfig
-        sudo cp service/upstart/mosquitto.conf /etc/init/
-        sudo cp /etc/mosquitto/mosquitto.conf.example /etc/mosquitto/mosquitto.conf
-        sudo sed -i 's/#listener/listener 9001\nprotocol websockets/g' /etc/mosquitto/mosquitto.conf
-        sudo sed -i 's/#port 1883/listener 1883/g' /etc/mosquitto/mosquitto.conf
-
-12. Worked on BBB: Setup MQTT. Create `/etc/systemd/system/mosquitto.service` with the following contents:
-
-        [Unit]
-        Description=Mosquitto MQTT Broker daemon
-        ConditionPathExists=/etc/mosquitto/mosquitto.conf
-        Requires=network.target
-
-        [Service]
-        Type=simple
-        User=mosquitto
-        ExecStartPre=/bin/rm -f /var/run/mosquitto.pid
-        ExecStart=/usr/local/sbin/mosquitto -v -c /etc/mosquitto/mosquitto.conf
-        ExecReload=/bin/kill -HUP $MAINPID
-        PIDFile=/var/run/mosquitto.pid
-        Restart=on-failure
-
-        [Install]
-        WantedBy=multi-user.target
-
-    Then:
-
-        sudo useradd mosquitto
-        sudo systemctl daemon-reload
-        sudo systemctl enable mosquitto
+        sudo sh -c 'echo "log_dest none\nlog_type error\nconnection_messages false" > /etc/mosquitto/conf.d/swarmgateway.conf'
 
 13. Setup a mDNS entry for MQTT so it can be discovered. Create
 `/etc/avahi/services/mqtt.service` and add:
