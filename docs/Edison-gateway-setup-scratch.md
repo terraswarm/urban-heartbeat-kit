@@ -23,7 +23,9 @@ on the board. Make sure the switch near the USB headers is flipped to the left.
 
         cd toFlash
         sudo ./flashall.sh
-        
+
+3. Upgrade the old debian to jessie.
+
 4. Plug in a micro USB cable to the left micro USB port. Connect to
 the edison over UART with something like:
 
