@@ -56,7 +56,7 @@ the edison over UART with something like:
 
 8. Install dependencies
 
-        sudo apt-get install vim bluetooth bluez libbluetooth-dev libudev-dev
+        sudo apt-get install vim bluetooth bluez libbluetooth-dev libudev-dev libavahi-compat-libdnssd-dev
 
 9. Install `mraa`:
 
