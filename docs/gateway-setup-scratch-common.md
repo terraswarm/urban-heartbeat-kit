@@ -129,6 +129,15 @@ Software Setup
         sudo systemctl enable adv-gateway-ssdp
         sudo systemctl enable gateway-*
 
+23. For the Edison, we also want to capture 15.4 packets
+from the CC2538.
+
+    Edison:
+
+        git clone https://github.com/lab11/IntelEdisonGateway.git
+        sudo cp IntelEdisonGateway/Triumvi/systemd/* /etc/systemd/system
+        sudo systemctl enable cc2538-gateway-mqtt
+
 23. Configure LEDs at boot:
 
     BBB:
