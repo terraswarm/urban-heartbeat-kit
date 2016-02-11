@@ -83,6 +83,12 @@ Software Setup
 
         sudo sed -i "s/mdns4_minimal/mdns_minimal/g" /etc/nsswitch.conf
 
+19. Make sure avahi mDNS lookup works.
+
+    Edison:
+    
+        sudo sed -i "s/allow-interfaces=eth0/#allow-interfaces=eth0/g" /etc/avahi/avahi-daemon.conf
+
 19. Fix the SSH banner. Change the contents of `/etc/issue.net` to:
 
         
