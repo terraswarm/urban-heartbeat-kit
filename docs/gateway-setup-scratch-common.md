@@ -150,7 +150,11 @@ from the CC2538.
 
         sudo sed -i "14i # Turn off the annoying blinking LEDs.\n/home/debian/urban-heartbeat-kit/scripts/bbb_leds_configure.sh\n" /etc/rc.local
 
+24. If we want an SD card, make sure it is mounted at boot.
 
+    Edison:
+    
+        sudo sh -c "echo '/dev/mmcblk1p1      /media/sdcard auto  defaults     1   1\n' >> /etc/fstab"
 
 Optional: Install Node-RED
 --------------------------
