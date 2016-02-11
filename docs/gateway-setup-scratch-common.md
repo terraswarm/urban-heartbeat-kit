@@ -92,7 +92,9 @@ Software Setup
         
         Created at the University of Michigan
         
-
+    And on the Edison:
+    
+        sudo sed -i "s\#Banner /etc/issue.net\Banner /etc/issue.net\g" /etc/ssh/sshd_config
 
 19. Clean up home directory
 
