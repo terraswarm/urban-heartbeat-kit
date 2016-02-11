@@ -83,6 +83,17 @@ Software Setup
 
         sudo sed -i "s/mdns4_minimal/mdns_minimal/g" /etc/nsswitch.conf
 
+19. Fix the SSH banner. Change the contents of `/etc/issue.net` to:
+
+        
+          ****************
+          * SwarmGateway *
+          ****************
+        
+        Created at the University of Michigan
+        
+
+
 19. Clean up home directory
 
         rm -rf /home/debian/*
