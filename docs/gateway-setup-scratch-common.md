@@ -155,9 +155,7 @@ from the CC2538.
         sudo mkdir /media/sdcard
         sudo chown debian:debian /media/sdcard
 
-    BBB:
-    
-        sudo sh -c "echo '/dev/mmcblk0p1      /media/sdcard auto  defaults     1   1\n' >> /etc/fstab"
+    BBB: Haven't found a solution that works. Ugh linux.
 
     Edison:
     
