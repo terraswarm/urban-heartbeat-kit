@@ -152,6 +152,13 @@ from the CC2538.
 
 24. If we want an SD card, make sure it is mounted at boot.
 
+        sudo mkdir /media/sdcard
+        sudo chown debian:debian /media/sdcard
+
+    BBB:
+    
+        sudo sh -c "echo '/dev/mmcblk0p1      /media/sdcard auto  defaults     1   1\n' >> /etc/fstab"
+
     Edison:
     
         sudo sh -c "echo '/dev/mmcblk1p1      /media/sdcard auto  defaults     1   1\n' >> /etc/fstab"
