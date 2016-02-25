@@ -116,6 +116,7 @@ Software Setup
         pushd gateway/software/adv-gateway-ip && npm i && popd
         pushd gateway/software/ble-address-sniffer-mqtt && npm i && popd
         pushd gateway/software/ble-gateway-mqtt && npm i && popd
+        pushd gateway/software/gateway-log && npm i && popd
         pushd gateway/software/gateway-mqtt-emoncms && npm i && popd
         pushd gateway/software/gateway-mqtt-topics && npm i && popd
         pushd gateway/software/gateway-publish && npm i && popd
