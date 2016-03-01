@@ -16,7 +16,7 @@ HOST = '127.0.0.1'
 async def recv ():
 	client = hbmqtt.client.MQTTClient()
 	await client.connect('mqtt://{}'.format(HOST))
-	await client.subscribe([('ble-gateway-advertisements', hbmqtt.client.QOS_0)])
+	await client.subscribe([('gateway-data', hbmqtt.client.QOS_0)])
 
 	while True:
 		message = await client.deliver_message()
