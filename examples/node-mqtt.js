@@ -5,7 +5,7 @@ var HOST = '127.0.0.1';
 var client = mqtt.connect('mqtt://' + HOST);
 
 client.on('connect', function () {
-    client.subscribe('ble-gateway-advertisements');
+    client.subscribe('gateway-data');
 });
 
 client.on('message', function (topic, message) {
