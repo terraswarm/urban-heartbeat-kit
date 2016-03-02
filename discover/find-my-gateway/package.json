@@ -20,6 +20,7 @@
     "debug": "^2.2.0",
     "eddystone-beacon-scanner": "^3.0.0",
     "mdns": "^2.2.11",
+    "mqtt": "^1.7.3",
     "node-ssdp": "^2.7.0",
     "pad": "^1.0.0"
   }

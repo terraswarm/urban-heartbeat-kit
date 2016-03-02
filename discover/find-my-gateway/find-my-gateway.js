@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 
 var url = require('url');
-
 var colors = require('colors');
 var debug = require('debug')('find-my-gateway');
 var ebs = require('eddystone-beacon-scanner/lib/eddystone-beacon-scanner');
 var mdns = require('mdns');
 var ssdp = require('node-ssdp');
+var mqtt = require('mqtt');
 var pad = require('pad');
+
 
 /*******************************************************************************
  * Helper functions
@@ -29,11 +30,17 @@ function display_gateway (ipv4_addr, ipv6_addr, mac_address, service) {
 	          pad(mac_address, 19) +
 	          pad(service, 21);
 	console.log(out);
+
+    // also try to connect to its mqtt topic to find more gateways
+    if (ipv4_addr != '') {
+        mqtt_discover_gateways(ipv4_addr);
+    }
 }
 
 function count_dots_in_string (str) {
 	return (str.match(/\./g)||[]).length;
 }
+
 
 /*******************************************************************************
  * mDNS
@@ -137,6 +144,43 @@ ssdpClient.on('response', function (headers, statusCode, rinfo) {
 		display_gateway(ipv4, ipv6, '', 'SSDP/UPnP');
 	}
 });
+
+
+/*******************************************************************************
+ * SwarmGateway Topic
+ ******************************************************************************/
+
+var mqtt_conns = [];
+var mqtt_discovers = [];
+var TOPIC_GATEWAY_DEVICES = 'device/SwarmGateway/+';
+
+// whenever a gateway is first found, connect to it and list all the gateways it sees
+function mqtt_discover_gateways(gateway_ip_addr) {
+    if (mqtt_conns.indexOf(gateway_ip_addr) == -1) {
+        mqtt_conns.push(gateway_ip_addr);
+
+        // connect to gateway over mqtt
+        var mqtt_addr = 'mqtt://' + gateway_ip_addr;
+        var mqtt_client = mqtt.connect(mqtt_addr);
+        mqtt_client.on('connect', function () {
+
+            // subscribe to list of gateway devices
+            mqtt_client.subscribe(TOPIC_GATEWAY_DEVICES);
+
+            // handle incoming packets
+            mqtt_client.on('message', function (topic, message) {
+                pkt = JSON.parse(message);
+
+                // only print out new gateways
+                if (mqtt_discovers.indexOf(pkt.ip_address) == -1) {
+                    mqtt_discovers.push(pkt.ip_address);
+
+                    display_gateway(pkt.ip_address, '', '', 'MQTT Topic');
+                }
+            });
+        });
+    }
+}
 
 
 /*******************************************************************************
