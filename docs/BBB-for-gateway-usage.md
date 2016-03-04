@@ -175,13 +175,13 @@ To stop a service from running at boot:
 
 There are several data streams coming from the SwarmGateway.
 
-#### MQTT
+#### MQTT:
 
 Topics:
 
-- `ble-gateway-advertisements`: ALL formatted data packets from nearby devices.
+- `gateway-data`: ALL formatted data packets from nearby devices.
 - `ble-advertisements`: ALL BLE MAC addresses seen at this gateway.
-- `ble-gateway-topics`: List of device-specific topics available at this gateway.
+- `gateway-topics`: List of device-specific topics available at this gateway.
 - `device/<device type>/<device id>`: Data stream from specific devices.
 
 #### EmonCMS:
@@ -196,6 +196,23 @@ installation, do the following steps on the gateway:
         sudo systemctl start gateway-mqtt-emoncms
 
 All devices the BleGateway finds will be published to emoncms.
+
+#### Local Logging
+
+The gatway can store all packets to local storage. To configure this:
+
+1. Edit `/etc/swarm-gateway/log.conf` and make sure there is a key `log_file` like so:
+
+        log_file = /media/sdcard/gateway.log
+
+2. Then enable the logging service:
+
+        sudo systemctl enable gateway-mqtt-log
+        sudo systemctl start gateway-mqtt-log
+
+In this example, all packets will be stored in files like
+`/media/sdcard/gateway.log.8.gz`.
+
 
 ### WiFi Interface
 Adafruit has instructions for setting up a WiFi connection
