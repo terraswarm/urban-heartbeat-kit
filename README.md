@@ -69,6 +69,12 @@ The gateway comes with the C client and Python bindings installed for using
 [GDP](https://swarmlab.eecs.berkeley.edu/projects/4814/global-data-plane). There is also an
 [example publisher script](https://github.com/terraswarm/urban-heartbeat-kit/blob/master/examples/python2-gdp.py).
 
+#### BLE Nearby
+
+This service discovers nearby gateways using their BLE advertisements, and creates a network
+of nearby gateways and the devices they can see. The system then uses packet reception rates
+and RSSI to determine which devices are nearest to which gateways. It then publishes
+a list of IDs that are nearest to that gateway on MQTT topic named `ble-nearby`.
 
 ### Interacting with the BBB
 
