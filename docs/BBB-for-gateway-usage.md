@@ -115,7 +115,7 @@ LAN). For code examples, look
 
     To retreive data from a MQTT topic, install MQTT and run:
 
-        mosquitto_sub -h <ip address of the gateway> -t ble-gateway-advertisements
+        mosquitto_sub -h <ip address of the gateway> -t gateway-data
 
 - **UDP Broadcast**
 
@@ -152,10 +152,10 @@ will update the code to the latest version.
 
 Four main services are configured to start at boot:
 
-1. `ble-gateway-publish`: Recieves BLE packets and publishes them on the various protocols.
-2. `ble-gateway-server`: Displays the received packets in a web interface.
-3. `ble-gateway-mqtt-topics`: Sends data from each device to its own MQTT topic.
-3. `ble-address-sniffer-publish`: Publish all seen BLE addresses on the MQTT topic `ble-advertisements`.
+1. `gateway-publish`: Recieves BLE packets and publishes them on the various protocols.
+2. `gateway-server`: Displays the received packets in a web interface.
+3. `gateway-mqtt-topics`: Sends data from each device to its own MQTT topic.
+3. `ble-address-sniffer-mqtt`: Publish all seen BLE addresses on the MQTT topic `ble-advertisements`.
 3. `gateway-gdp-publish`: Publish gateway packets to a GDP log.
 4. `adv-gateway-ip`: Broadcast the gateway IP address over BLE/Eddystone.
 
