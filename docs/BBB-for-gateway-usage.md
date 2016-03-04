@@ -44,7 +44,7 @@ To find it, you have a few options:
 or [iOS](https://itunes.apple.com/us/app/summon-lab11/id1051205682?mt=8). This app
 will find the BLE packets from the nearby SwarmGateway.
 Alternatively, you can use the [Nordic BLE App](https://play.google.com/store/apps/details?id=no.nordicsemi.android.mcp)
-and look for a device with the name "Beaglebone". Both apps will display the IP address.
+and look for a device with the name "swarmgateway". Both apps will display the IP address.
 
 2. **Try using the mDNS URL**: If mDNS lookup is working, and you are on the same
 network as the BBB, you should be able to view [swarmgateway.local](http://swarmgateway.local/).
@@ -67,6 +67,8 @@ any of the discovery protocols, you can use that directly.
 open:
 
         nmap -sV -p3001 --open <any ip address on the gateway network>/24
+
+    You could also use ports 1883 (MQTT), 80, or 22.
 
 
 Getting Data from BLE Devices On Your Computer
