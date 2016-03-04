@@ -192,8 +192,8 @@ installation, do the following steps on the gateway:
 1. Edit `/etc/swarm-gateway/emoncms.conf` with the credentials to your install.
 2. Enable the publishing service:
 
-        sudo systemctl enable ble-gateway-mqtt-emoncms
-        sudo systemctl start ble-gateway-mqtt-emoncms
+        sudo systemctl enable gateway-mqtt-emoncms
+        sudo systemctl start gateway-mqtt-emoncms
 
 All devices the BleGateway finds will be published to emoncms.
 
