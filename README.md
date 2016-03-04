@@ -27,15 +27,8 @@ Gateway
 
 ### Hardware
 
-The gateway is composed of:
-
-- A [Beaglebone Black](http://beagleboard.org/BLACK)
-- A [BBB power supply](http://www.newark.com/adafruit-industries/276/ac-dc-converter-external-plug/dp/53W5823)
-- A [GAP](https://github.com/lab11/gap) cape
-- A [USB Hub](http://www.newark.com/iogear/guh285w6/hub-4-port-usb-2-0/dp/74R2322)
-- A [BLE dongle](http://www.amazon.com/gp/product/B007Q45EF4)
-- A [WiFi dongle](http://www.amazon.com/Edimax-EW-7811Un-150Mbps-Raspberry-Supports/dp/B003MTTJOY)
-- A [Microphone dongle](http://www.amazon.com/Super-Microphone-Adapter-Driver-Notebook/dp/B00M3UJ42A)
+The gateway is hardware is listed
+[here](https://github.com/terraswarm/urban-heartbeat-kit/blob/master/docs/urban-heartbeat-kit-hardware.md).
 
 The gateway in the kit is pre-configured. If you want to commission a new
 BeagleBone Black, there are two options:
