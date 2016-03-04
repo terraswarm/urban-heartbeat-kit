@@ -63,6 +63,12 @@ Example listeners for subscribing to packets are in the
 [examples](https://github.com/terraswarm/urban-heartbeat-kit/tree/master/examples)
 folder.
 
+#### Local Server View
+
+Each gateway is running a simple webserver on port 80 that displays
+the current status of the gateway and some information about the
+devices it currently can see.
+
 #### GDP Client
 
 The gateway comes with the C client and Python bindings installed for using
@@ -86,6 +92,19 @@ the usage doc for how to configure that service.
 
 The gateway can log all received packets to local storage. All packets are stored in JSON format and compressed.
 See the usage doc for enabling local logging.
+
+#### BLE Advertisement Sniffing
+
+Each gateway is sniffing for not only data packets it knows how to parse,
+but additionally all BLE advertisement IDs. Each ID and the RSSI for the packet
+is provided on the `ble-advertisements` MQTT topic.
+
+
+
+
+
+
+
 
 ### Interacting with the BBB
 
