@@ -79,8 +79,13 @@ a list of IDs that are nearest to that gateway on MQTT topic named `ble-nearby`.
 #### EmonCMS
 
 [EmonCMS](https://emoncms.org/) is a web backend tool for aggregating power data. While it is designed for power
-related data, it can handle any numerical timeseries data. The gateway can post data to the server. See
-the usage doc for how to configure that.
+related data, it can handle any numerical timeseries data. The gateway can post data to an EmonCMS server. See
+the usage doc for how to configure that service.
+
+#### Local Logging
+
+The gateway can log all received packets to local storage. All packets are stored in JSON format and compressed.
+See the usage doc for enabling local logging.
 
 ### Interacting with the BBB
 
