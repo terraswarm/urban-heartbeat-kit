@@ -76,6 +76,12 @@ of nearby gateways and the devices they can see. The system then uses packet rec
 and RSSI to determine which devices are nearest to which gateways. It then publishes
 a list of IDs that are nearest to that gateway on MQTT topic named `ble-nearby`.
 
+#### EmonCMS
+
+[EmonCMS](https://emoncms.org/) is a web backend tool for aggregating power data. While it is designed for power
+related data, it can handle any numerical timeseries data. The gateway can post data to the server. See
+the usage doc for how to configure that.
+
 ### Interacting with the BBB
 
 [Use the BBB gateway](https://github.com/terraswarm/urban-heartbeat-kit/blob/master/docs/BBB-for-gateway-usage.md)
