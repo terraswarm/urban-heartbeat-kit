@@ -5,6 +5,7 @@ BeagleBone Black Setup for Gateway
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
+- [Remaining Setup](#remaining-setup)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

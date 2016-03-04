@@ -1,3 +1,13 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [Intel Edison Gateway Setup from Scratch](#intel-edison-gateway-setup-from-scratch)
+  - [Remaining Setup](#remaining-setup)
+  - [Copying image](#copying-image)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 Intel Edison Gateway Setup from Scratch
 =======================================
 

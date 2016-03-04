@@ -13,9 +13,13 @@ and distribute the data to many applications.
 - [Getting Data from BLE Devices On Your Computer](#getting-data-from-ble-devices-on-your-computer)
 - [Hacking the Gateway](#hacking-the-gateway)
   - [Configuring Startup](#configuring-startup)
+  - [Data Provided by the SwarmGateway](#data-provided-by-the-swarmgateway)
+    - [MQTT:](#mqtt)
+    - [EmonCMS:](#emoncms)
+    - [Local Logging](#local-logging)
   - [WiFi Interface](#wifi-interface)
   - [802.15.4 Interface](#802154-interface)
-  - [Audio/Microphone Support](#audomicrophone-support)
+  - [Audio/Microphone Support](#audiomicrophone-support)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

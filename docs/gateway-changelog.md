@@ -1,3 +1,14 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [SwarmGateway Changelog](#swarmgateway-changelog)
+  - [Version 1.2](#version-12)
+  - [Version 1.1](#version-11)
+  - [Version 1](#version-1)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 SwarmGateway Changelog
 ======================
 

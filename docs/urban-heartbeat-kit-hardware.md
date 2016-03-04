@@ -1,3 +1,12 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [Urban Heartbeat Kit Hardware](#urban-heartbeat-kit-hardware)
+  - [Version 1](#version-1)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 Urban Heartbeat Kit Hardware
 ============================
 
