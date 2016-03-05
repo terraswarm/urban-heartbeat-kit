@@ -33,7 +33,7 @@ Gateway
 
 ### Hardware
 
-The gateway hardware is listed
+The hardware in the kit is listed
 [here](https://github.com/terraswarm/urban-heartbeat-kit/blob/master/docs/urban-heartbeat-kit-hardware.md).
 
 The gateway in the kit is pre-configured. If you want to commission a new
