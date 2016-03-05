@@ -127,3 +127,7 @@ temperature, humidity, light, pressure, and vibration each second.
 1. **[Blink](https://github.com/lab11/blees/tree/master/hardware/blink/rev_a)**: A 1 inch round PIR based motion sensor. Advertises
 whether the sensor is currently detecting motion, whether it has detected motion since the last tranmsmitted packet,
 and whether it has detected motion in the last minute.
+
+     <img src="https://raw.githubusercontent.com/lab11/blees/master/media/blink_large_1000x790.jpg" alt="BLEES" width="25%;">
+
+
