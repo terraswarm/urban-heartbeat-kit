@@ -205,7 +205,7 @@ All devices the BleGateway finds will be published to emoncms.
 
 #### Local Logging
 
-The gatway can store all packets to local storage. To configure this:
+The gateway can store all packets to local storage. To configure this:
 
 1. Edit `/etc/swarm-gateway/log.conf` and make sure there is a key `log_file` like so:
 
@@ -218,6 +218,21 @@ The gatway can store all packets to local storage. To configure this:
 
 In this example, all packets will be stored in files like
 `/media/sdcard/gateway.log.8.gz`.
+
+#### Posting to GATD
+
+If you would like to publish data to [GATD](http://gatd.io) via HTTP do the following:
+
+1. Edit `/etc/swarm-gateway/gatd.conf` with the HTTP POST url
+
+        post_url = http://post.gatd.io/...
+
+2. Then enable the GATD posting service
+
+        sudo systemctl enable gateway-mqtt-gatd
+        sudo systemctl start gateway-mqtt-gatd
+
+All devices the Gateway finds will be published to GATD.
 
 
 ### WiFi Interface
