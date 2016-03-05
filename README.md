@@ -26,9 +26,10 @@ Information about the preliminary gateway kit for the Urban Heartbeat workshop
 Gateway
 ----------
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/terraswarm/urban-heartbeat-kit/master/media/gateway.jpg" alt="Gateway" width="50%;">
-</p>
+<img src="https://raw.githubusercontent.com/terraswarm/urban-heartbeat-kit/master/media/gateway.jpg" alt="Gateway" width="25%;" align="right">
+<img src="https://raw.githubusercontent.com/terraswarm/urban-heartbeat-kit/master/media/gateway_edison_824x1000.jpg" alt="Gateway Edison" width="25%;" align="right">
+
+
 
 ### Hardware
 
