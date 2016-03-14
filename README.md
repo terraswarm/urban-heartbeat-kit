@@ -11,13 +11,6 @@ Information about the preliminary gateway kit for the Urban Heartbeat workshop
 - [Gateway](#gateway)
   - [Hardware](#hardware)
   - [Software](#software)
-    - [BleGateway](#blegateway)
-    - [Local Server View](#local-server-view)
-    - [GDP Client](#gdp-client)
-    - [BLE Nearby](#ble-nearby)
-    - [EmonCMS](#emoncms)
-    - [Local Logging](#local-logging)
-    - [BLE Advertisement Sniffing](#ble-advertisement-sniffing)
   - [Interacting with the BBB](#interacting-with-the-bbb)
 - [Sensors](#sensors)
 
