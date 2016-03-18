@@ -15,6 +15,7 @@ SwarmGateway Changelog
 Version 1.3
 -----------
 
+- Upgrade BBB Linux kernel to 3.5.0.
 - Upgrade `node` to 5.8.0.
 - Add GATD publisher.
 - `ble-nearby` fixes.
