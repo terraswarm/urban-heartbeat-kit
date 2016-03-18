@@ -14,7 +14,7 @@ steps to get the gateway running on a new BBB, a BBB can be flashed
 directly with a pre-built image we have made.
 
 1. Download the image.
-    [urban-hearbeat-kit_1.0.0](http://nuclear.eecs.umich.edu/public/urban-heartbeat-kit_1.0.0.zip)
+    [swarm-gateway-bbb-1.3.0](http://nuclear.eecs.umich.edu/public/swarm-gateway/swarm-gateway-bbb-1.3.0.zip)
 
 2. Unzip.
 
