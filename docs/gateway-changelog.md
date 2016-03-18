@@ -12,6 +12,16 @@
 SwarmGateway Changelog
 ======================
 
+Version 1.3
+-----------
+
+- Upgrade `node` to 5.8.0.
+- Add GATD publisher.
+- `ble-nearby` fixes.
+- Moved `gateway-ssdp` to gateway repo.
+- Add email watchdog.
+- Add 15.4 Monjolo receiver.
+
 Version 1.2
 -----------
 
