@@ -125,16 +125,13 @@ Software Setup
 
 21. Install gateway dependencies.
 
-        pushd gateway/software/adv-gateway-ip && npm i && popd
-        pushd gateway/software/ble-address-sniffer-mqtt && npm i && popd
-        pushd gateway/software/ble-gateway-mqtt && npm i && popd
-        pushd gateway/software/gateway-log && npm i && popd
-        pushd gateway/software/gateway-mqtt-emoncms && npm i && popd
-        pushd gateway/software/gateway-mqtt-topics && npm i && popd
-        pushd gateway/software/gateway-publish && npm i && popd
-        pushd gateway/software/gateway-server && npm i && popd
+        cd gateway/software
+        mkdir node_modules
+        # Then in each subfolder
+        ln - ../node_modules .
+        npm i
+
         pushd urban-heartbeat-kit/examples && npm i && popd
-        pushd urban-heartbeat-kit/discover/gateway-ssdp && npm i && popd
 
 22. Setup ble-gateway to start on boot.
 
