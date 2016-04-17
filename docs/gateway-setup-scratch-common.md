@@ -171,6 +171,62 @@ from the CC2538.
     
         sudo sh -c "echo '/dev/mmcblk1p1      /media/sdcard auto  defaults     1   1\n' >> /etc/fstab"
 
+
+Install Monitoring
+------------------
+
+Use sensu for monitoring gateways and devices.
+
+1. Install sensu.
+
+        wget https://sensuapp.org/install.sh
+        sudo bash install.sh
+        sudo apt-get update
+        sudo apt-get install sensu
+        
+2. Change permissions on sensu conf folder so we can add confs for devices.
+
+        sudo chown -R sensu:sensu /etc/sensu/conf.d
+
+3. Setup systemd for sensu
+
+        sudo rm /etc/init.d/sensu-client
+        cd /etc/systemd/system
+        sudo wget https://raw.githubusercontent.com/sensu/sensu-build/master/sensu_configs/systemd/sensu-client.service
+
+3. Get the gateway scripts
+
+        git clone https://github.com/lab11/gateway-tools
+        cd gateway-tools/gateway
+        npm install
+
+4. Then need `/etc/sensu/conf.d/client.json`.
+
+     ```
+    {
+      "rabbitmq": {
+        "host": "host",
+        "port": 5672,
+        "vhost": "/sensu",
+        "user": "sensu",
+        "password": "password"
+      },
+      "client": {
+        "name": "gateway-macaddr",
+        "address": "192.168.1.2",
+        "subscriptions": [
+          "swarm-gateway"
+        ]
+      },
+      "socket": {
+        "bind": "127.0.0.1",
+        "port": 3031
+      }
+    }
+    ```
+
+
+
 Optional: Install Node-RED
 --------------------------
 
