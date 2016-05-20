@@ -16,25 +16,25 @@ var pad = require('pad');
 
 function display_header () {
 	var header = pad('Device', 20).bold +
-	             pad('IPv4 Address', 17).bold +
-	             pad('IPv6 Address', 41).bold +
-	             pad('MAC Address', 19).bold +
-	             pad('Discovered Using', 18).bold;
+		pad('IPv4 Address', 17).bold +
+		pad('IPv6 Address', 41).bold +
+		pad('MAC Address', 19).bold +
+		pad('Discovered Using', 18).bold;
 	console.log(header);
 }
 
 function display_gateway (ipv4_addr, ipv6_addr, mac_address, service) {
 	var out = pad('SwarmGateway', 20) +
-	          pad(ipv4_addr, 17) +
-	          pad(ipv6_addr, 41) +
-	          pad(mac_address, 19) +
-	          pad(service, 21);
+		pad(ipv4_addr, 17) +
+		pad(ipv6_addr, 41) +
+		pad(mac_address, 19) +
+		pad(service, 21);
 	console.log(out);
 
-    // also try to connect to its mqtt topic to find more gateways
-    if (ipv4_addr != '') {
-        mqtt_discover_gateways(ipv4_addr);
-    }
+	// also try to connect to its mqtt topic to find more gateways
+	if (ipv4_addr != '') {
+		mqtt_discover_gateways(ipv4_addr);
+	}
 }
 
 function count_dots_in_string (str) {
@@ -74,16 +74,18 @@ function handle_mdns_service (service) {
 		}
 
 		// Pull out addresses
-		for (var i=0; i<service.addresses.length; i++) {
-			if (service.addresses[i].indexOf('.') > -1 && ipv4 == '') {
-				ipv4 = service.addresses[i];
-			} else if (service.addresses[i].indexOf(':') > -1 && ipv6 == '') {
-				ipv6 = service.addresses[i];
+		if (service.addresses) {
+			for (var i=0; i<service.addresses.length; i++) {
+				if (service.addresses[i].indexOf('.') > -1 && ipv4 == '') {
+					ipv4 = service.addresses[i];
+				} else if (service.addresses[i].indexOf(':') > -1 && ipv6 == '') {
+					ipv6 = service.addresses[i];
+				}
 			}
-		}
 
-		// Print what we found
-		display_gateway(ipv4, ipv6, mac, 'mDNS');
+			// Print what we found
+			display_gateway(ipv4, ipv6, mac, 'mDNS');
+		}
 	}
 }
 
@@ -156,30 +158,30 @@ var TOPIC_GATEWAY_DEVICES = 'device/SwarmGateway/+';
 
 // whenever a gateway is first found, connect to it and list all the gateways it sees
 function mqtt_discover_gateways(gateway_ip_addr) {
-    if (mqtt_conns.indexOf(gateway_ip_addr) == -1) {
-        mqtt_conns.push(gateway_ip_addr);
+	if (mqtt_conns.indexOf(gateway_ip_addr) == -1) {
+		mqtt_conns.push(gateway_ip_addr);
 
-        // connect to gateway over mqtt
-        var mqtt_addr = 'mqtt://' + gateway_ip_addr;
-        var mqtt_client = mqtt.connect(mqtt_addr);
-        mqtt_client.on('connect', function () {
+		// connect to gateway over mqtt
+		var mqtt_addr = 'mqtt://' + gateway_ip_addr;
+		var mqtt_client = mqtt.connect(mqtt_addr);
+		mqtt_client.on('connect', function () {
 
-            // subscribe to list of gateway devices
-            mqtt_client.subscribe(TOPIC_GATEWAY_DEVICES);
+			// subscribe to list of gateway devices
+			mqtt_client.subscribe(TOPIC_GATEWAY_DEVICES);
 
-            // handle incoming packets
-            mqtt_client.on('message', function (topic, message) {
-                pkt = JSON.parse(message);
+			// handle incoming packets
+			mqtt_client.on('message', function (topic, message) {
+				pkt = JSON.parse(message);
 
-                // only print out new gateways
-                if (mqtt_discovers.indexOf(pkt.ip_address) == -1) {
-                    mqtt_discovers.push(pkt.ip_address);
+				// only print out new gateways
+				if (mqtt_discovers.indexOf(pkt.ip_address) == -1) {
+					mqtt_discovers.push(pkt.ip_address);
 
-                    display_gateway(pkt.ip_address, '', '', 'MQTT Topic');
-                }
-            });
-        });
-    }
+					display_gateway(pkt.ip_address, '', '', 'MQTT Topic');
+				}
+			});
+		});
+	}
 }
 
 
