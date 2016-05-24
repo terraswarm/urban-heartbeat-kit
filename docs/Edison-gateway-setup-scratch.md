@@ -98,7 +98,8 @@ Found some good instructions
         #after inserting SD card
         sudo mkdir /mnt/sd
         sudo mount /dev/mmcblk1p1 /mnt/sd
-        dd bs=4M if=/dev/mmcblk0p7 /mnt/sd/swarm-gateway-edison-1.4.0.root
+        dd bs=4M if=/dev/mmcblk0p7 /mnt/sd/swarm-gateway-edison-1.4.0.boot
+        dd bs=4M if=/dev/mmcblk0p8 /mnt/sd/swarm-gateway-edison-1.4.0.root
         dd bs=4M if=/dev/mmcblk0p10 /mnt/sd/swarm-gateway-edison-1.4.0.home
         
 2. Use the dfu-util to flash it on a new edison.
