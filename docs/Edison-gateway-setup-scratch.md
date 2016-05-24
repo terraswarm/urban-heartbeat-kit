@@ -92,3 +92,30 @@ Copying image
 Found some good instructions
 [here](https://communities.intel.com/message/258584#258584)
 
+
+1. Get the good image off of the Edison.
+
+        #after inserting SD card
+        sudo mkdir /mnt/sd
+        sudo mount /dev/mmcblk1p1 /mnt/sd
+        dd bs=4M if=/dev/mmcblk0p7 /mnt/sd/swarm-gateway-edison-1.4.0.root
+        dd bs=4M if=/dev/mmcblk0p10 /mnt/sd/swarm-gateway-edison-1.4.0.home
+        
+2. Use the dfu-util to flash it on a new edison.
+
+    1. Download ubilinux
+    2. Edit flashall.sh to have:
+    
+            echo "Flashing rootfs, (it can take up to 10 minutes... Please be patient)"
+	          flash-command --alt rootfs -D "${ESC_BASE_DIR}/swarm-gateway-edison-1.4.0.root"
+
+	          echo "Flashing home directory, (it can take up to 10 minutes... Please be patient)"
+	          flash-command --alt home -D "${ESC_BASE_DIR}/swarm-gateway-edison-1.4.0.home" -R
+
+3. Plug in gateway. Both micro USB connected. Switch towards the micro USB.
+Reboot gateway. Right after "*** Ready to receive application ***", wait for
+"Hit any key to stop autoboot:" and hit a key. At the prompt, enter "run do_flash".
+
+4. Then on your computer.
+
+        sudo ./flashall.sh
