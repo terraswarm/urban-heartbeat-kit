@@ -72,6 +72,23 @@ The GAP overlay and others are setup in a repository also maintained by RCN.
         make
         sudo make install
 
+11. Make a static directory for SD Cards to mount to
+
+
+        Make folder for sdcard to mount to
+        
+                mkdir /media/sdcard
+
+        Edit the fstab to add an additional line
+
+                sudo vim /etc/fstab
+                # Edit the file to add an additional line as follows
+                /dev/sdcard     /media/sdcard   auto    auto,rw,async,user,nofail    0       0
+        
+        Add a udev rule to create a symlink for the sdcard
+
+                sudo cp ~/gateway/udev/60-sdcard.rules /etc/udev/rules.d/
+
 Remaining Setup
 ---------------
 
