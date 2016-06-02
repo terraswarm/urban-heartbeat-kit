@@ -41,15 +41,15 @@ for the BBB. I used:
 
         passwd
 
-7. Add `sbin` to the path. Not sure why this isn't the default.
+8. Add `sbin` to the path. Not sure why this isn't the default.
 
         sudo sed -i 's\/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games\/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/sbin\g' /etc/profile
 
-8. Upgrade the kernel
+9. Upgrade the kernel
 
         sudo /opt/scripts/tools/update_kernel.sh --beta --bone-channel
 
-9. Now we have to setup the device tree overlay to let Linux know that the the radios exist.
+10. Now we have to setup the device tree overlay to let Linux know that the the radios exist.
 The GAP overlay and others are setup in a repository also maintained by RCN.
 
         git clone https://github.com/lab11/bb.org-overlays
@@ -63,7 +63,7 @@ The GAP overlay and others are setup in a repository also maintained by RCN.
         # Edit that line that looks like this to include the reference to GAP
         cape_enable=bone_capemgr.enable_partno=BB-GAP
 
-10. Install the wpan-tools to configure all of the 15.4 devices.
+11. Install the wpan-tools to configure all of the 15.4 devices.
 
         wget http://wpan.cakelab.org/releases/wpan-tools-0.5.tar.gz
         tar xf wpan-tools-0.5.tar.gz
@@ -72,7 +72,7 @@ The GAP overlay and others are setup in a repository also maintained by RCN.
         make
         sudo make install
 
-11. Make a static directory for SD Cards to mount to
+12. Make a static directory for SD Cards to mount to
 
 
         Make folder for sdcard to mount to
@@ -88,6 +88,40 @@ The GAP overlay and others are setup in a repository also maintained by RCN.
         Add a udev rule to create a symlink for the sdcard
 
                 sudo cp ~/gateway/udev/60-sdcard.rules /etc/udev/rules.d/
+
+13. Set up Wifi (Tested with the Edimax EW-7811Un)
+	
+		Edit the network interfaces configuration file(wpa-enterprise, MWireless specific)
+
+				sudo vim /etc/network/interfaces
+				#edit the wifi section be as follows
+				auto wlan0
+				iface wlan0 inet dhcp
+				wireless-mode Managed
+				wpa-ssid your_ssid 
+				wpa-ap-scan 1
+				wpa-proto RSN WPA
+				wpa-pairwise CCMP TKIP
+				wpa-group CCMP TKIP
+				wpa-key-mgmt WPA-EAP
+				wpa-eap PEAP
+				wpa-identity your_identity
+				wpa-password your_password
+				wpa-phase1 fast_provisioning=1
+				wpa-pac-file /etc/network/mwireless.crt
+
+		Download the cert file and place it in /etc/network/
+
+				curl -O http://www.incommon.org/certificates/repository/sha384%20Intermediate%20cert.txt
+				mv sha384%20Intermediate%20cert.txt /etc/network/mwireless.crt
+
+		Edit the udev rules to make sure that the network interface is always wlan0
+
+				sudo vim /etc/udev/rules.d/70-persistent-net.rules
+				#delete all lines that are assigning names wlan*
+				#insert the following line in their place
+				#this might be unstable with multiple devices plugged in
+				SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{dev_id}=="0x0", ATTR{type}=="1", KERNEL=="wlan*", NAME="wlan0"
 
 Remaining Setup
 ---------------
