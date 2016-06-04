@@ -165,7 +165,8 @@ from the CC2538.
         sudo mkdir /media/sdcard
         sudo chown debian:debian /media/sdcard
 
-    BBB: Haven't found a solution that works. Ugh linux.
+    BBB:
+See Beaglebone Black specific instructions [here](https://github.com/terraswarm/urban-heartbeat-kit/blob/master/docs/BBB-gateway-setup-from-scratch.md)
 
     Edison:
     
