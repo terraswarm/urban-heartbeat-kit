@@ -27,14 +27,14 @@ Software Setup
 
         sudo sed -i 's\/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games\/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/sbin\g' /etc/profile
 
-1. Change hostname. Edit `/etc/hostname` and make it:
+1. Change hostname.
 
-        swarmgateway
+        sudo su
+        echo 'swarmgateway' > /etc/hostname
         
 2. Add swarmgateway to hosts:
 
-        sudo vim /etc/hosts
-          127.0.1.1    swarmgateway
+        echo "127.0.1.1    swarmgateway" >> /etc/hosts
 
 1. Install MQTT:
 
