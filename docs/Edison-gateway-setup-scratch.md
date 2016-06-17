@@ -46,14 +46,23 @@ the edison over UART with something like:
         user: edison
         pass: edison
 
-5. Change password:
-
-        passwd
-
-6. Become root to install sudo. Password is `edison`.
+4. Become root. Password is `edison`.
 
         su
-        apt-get install sudo
+
+5. Connect to Wi-Fi.
+
+        ifconfig wlan0 up
+        iwconfig wlan0 essid "4908airwaves"
+        dhclient wlan0
+        
+    Note: I couldn't get Ethernet to work for this particular kernel version.
+    The kernel module compiled by LGSInnovations didn't match the kernel
+    included with jubilinux.
+
+6. Install sudo.
+
+        apt install sudo
 
 7. Create "debian" user to match the BBB.
 
@@ -64,9 +73,13 @@ the edison over UART with something like:
         usermod -a -G sudo debian
         # exit su with ctrl+d
 
+8. Get rid of edison user.
+
+        userdel edison
+
 8. Install dependencies
 
-        sudo apt-get install vim bluetooth bluez libbluetooth-dev libudev-dev libavahi-compat-libdnssd-dev python-pip
+        apt install vim bluetooth bluez libbluetooth-dev libudev-dev libavahi-compat-libdnssd-dev
 
 
 Triumvi Setup
