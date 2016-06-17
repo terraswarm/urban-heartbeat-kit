@@ -24,9 +24,16 @@ Intel Edison Gateway Setup from Scratch
 the right micro USB connected (the one inbetween the two other USB headers
 on the board. Make sure the switch near the USB headers is flipped to the left.
 
-        cd toFlash
+        cd jubilinux
         sudo ./flashall.sh
 
+    You may need to keep the edison from booting to the kernel. To do this,
+    Immediately after powering it start connecting to the serial port.
+    You need to catch it early enough so that you see
+    `*** Ready to receive application ***`. That will sit there for a bit,
+    when the next thing prints, hit any key (perhaps `f`) to keep it from
+    booting any further. Then type `run do_flash`. Now the edison
+    is ready for you to run `flashall.sh`.
 
 
 4. Plug in a micro USB cable to the left micro USB port. Connect to
