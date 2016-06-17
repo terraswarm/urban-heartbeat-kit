@@ -19,6 +19,13 @@ These instructions should be shared between gateway platforms running Debian.
 Software Setup
 --------------
 
+6. Disable root SSH.
+
+        sudo sed -i 's/PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config
+        
+8. Add `sbin` to the path. Not sure why this isn't the default.
+
+        sudo sed -i 's\/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games\/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/sbin\g' /etc/profile
 
 1. Change hostname. Edit `/etc/hostname` and make it:
 
