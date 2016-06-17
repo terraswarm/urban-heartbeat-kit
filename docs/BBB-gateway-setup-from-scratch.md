@@ -33,17 +33,13 @@ for the BBB. I used:
         sudo apt-get update
         sudo apt-get install vim git lsb-release tcpdump pkg-config libnl-3-dev libnl-genl-3-dev libc-ares-dev libwrap0-dev cmake zlib1g-dev libssl-dev uuid-dev screen curl bluetooth bluez bluez-hcidump libbluetooth-dev libudev-dev libusb-1.0-0 libusb-1.0-0-dev python-dev python-pip ntp libavahi-compat-libdnssd-dev
 
-6. Disable root SSH.
 
-        sudo sed -i 's/PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config
 
 7. Change the `debian` account password.
 
         passwd
 
-8. Add `sbin` to the path. Not sure why this isn't the default.
 
-        sudo sed -i 's\/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games\/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/sbin\g' /etc/profile
 
 9. Upgrade the kernel
 
