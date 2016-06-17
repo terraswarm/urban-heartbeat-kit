@@ -75,7 +75,7 @@ the edison over UART with something like:
 
 8. Get rid of edison user.
 
-        userdel edison
+        passwd -l edison
 
 8. Install dependencies
 
