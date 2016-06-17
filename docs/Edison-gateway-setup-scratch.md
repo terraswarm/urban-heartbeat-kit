@@ -50,7 +50,7 @@ the edison over UART with something like:
 
         passwd
 
-6. Become root to install sudo
+6. Become root to install sudo. Password is `edison`.
 
         su
         apt-get install sudo
