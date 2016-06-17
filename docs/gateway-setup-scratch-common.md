@@ -42,8 +42,8 @@ Software Setup
         sudo apt-key add mosquitto-repo.gpg.key
         cd /etc/apt/sources.list.d/
         sudo wget http://repo.mosquitto.org/debian/mosquitto-jessie.list
-        sudo apt-get update
-        sudo apt-get install mosquitto
+        sudo apt update
+        sudo apt install mosquitto
 
 11. Setup config for mosquitto:
 
@@ -62,7 +62,7 @@ Software Setup
           </service>
         </service-group>
 
-13. Install Python 3.5.
+13. (Optional) Install Python 3.5.
 
         wget https://www.python.org/ftp/python/3.5.1/Python-3.5.1.tgz
         tar xf Python-3.5.1.tgz
@@ -70,7 +70,7 @@ Software Setup
         ./configure
         make sudo make install
 
-14. Install some Python dependencies.
+14. (Optional) Install some Python dependencies.
 
         sudo pip install paho-mqtt
         sudo pip install websocket
@@ -79,14 +79,14 @@ Software Setup
 
 13. Install Node.js.
 
-        curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+        curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
         sudo apt-get install -y nodejs
 
 14. Enable Node privileged access to BLE so it doesn't need sudo.
 
         sudo setcap cap_net_raw+eip $(eval readlink -f `which node`)
 
-17. Get rid of locale warnings
+17. (Optional) Get rid of locale warnings
 
         sudo apt-get install locales
         sudo locale-gen en_us.UTF-8
