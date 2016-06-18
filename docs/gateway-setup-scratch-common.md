@@ -151,6 +151,12 @@ Software Setup
         sudo systemctl enable gateway-server
         sudo systemctl enable gateway-ssdp
 
+23. Configure `app-runner`.
+
+        mkdir ~/gateway-tools/apps-enabled
+        sudo mkdir /etc/swarm-gateway
+        sudo sh -c 'echo "app_dir = /home/debian/gateway-tools/apps-enabled" > /etc/swarm-gateway/app-runner.conf'
+
 23. For the Edison, we also want to capture 15.4 packets
 from the CC2538.
 
