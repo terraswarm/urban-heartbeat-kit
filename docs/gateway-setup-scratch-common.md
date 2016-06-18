@@ -143,11 +143,13 @@ Software Setup
         sudo cp urban-heartbeat-kit/systemd/* /etc/systemd/system/
         sudo systemctl daemon-reload
         sudo systemctl disable lighttpd
+        sudo systemctl enable adv-gateway-ip
+        sudo systemctl enable app-runner
         sudo systemctl enable ble-address-sniffer-mqtt
         sudo systemctl enable ble-gateway-mqtt
-        sudo systemctl enable adv-gateway-ip
-        sudo systemctl enable adv-gateway-ssdp
-        sudo systemctl enable gateway-*
+        sudo systemctl enable gateway-mqtt-topics
+        sudo systemctl enable gateway-server
+        sudo systemctl enable gateway-ssdp
 
 23. For the Edison, we also want to capture 15.4 packets
 from the CC2538.
