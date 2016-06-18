@@ -106,12 +106,12 @@ Software Setup
     
         sudo sed -i "s/allow-interfaces=eth0/#allow-interfaces=eth0/g" /etc/avahi/avahi-daemon.conf
 
-19. Fix the SSH banner. Change the contents of `/etc/issue.net` to:
+19. Fix the SSH banner. Change the contents of `/etc/issue.net` to (fill in the `x`):
 
         
-          ****************
-          * SwarmGateway *
-          ****************
+          *********************
+          * SwarmGateway v1.x *
+          *********************
         
         Created at the University of Michigan
         
