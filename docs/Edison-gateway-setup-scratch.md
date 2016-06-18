@@ -59,15 +59,12 @@ the edison over UART with something like:
 
         su
 
-5. Connect to Wi-Fi.
+5. Connect to Wi-Fi or flip the switch and plug in ethernet.
 
         ifconfig wlan0 up
         iwconfig wlan0 essid "4908airwaves"
         dhclient wlan0
         
-    Note: I couldn't get Ethernet to work for this particular kernel version.
-    The kernel module compiled by LGSInnovations didn't match the kernel
-    included with jubilinux.
 
 6. Install sudo.
 
