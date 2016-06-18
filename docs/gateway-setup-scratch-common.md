@@ -39,8 +39,7 @@ Software Setup
 
         wget http://repo.mosquitto.org/debian/mosquitto-repo.gpg.key
         sudo apt-key add mosquitto-repo.gpg.key
-        cd /etc/apt/sources.list.d/
-        sudo wget http://repo.mosquitto.org/debian/mosquitto-jessie.list
+        sudo wget -P /etc/apt/sources.list.d/ http://repo.mosquitto.org/debian/mosquitto-jessie.list
         sudo apt update
         sudo apt install mosquitto
 
