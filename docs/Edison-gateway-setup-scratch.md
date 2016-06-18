@@ -20,6 +20,15 @@ Intel Edison Gateway Setup from Scratch
         cd jubilinux
         unzip jubilinux.zip
 
+3. This step is hard and takes hours. Compile edison/yocto
+(following [these](https://github.com/LGSInnovations/Edison-Ethernet/blob/master/guides/customize-yocto-kernel.md)
+directions. Make sure to both enable the USB Ethernet chip (as specified in those directions)
+and make a module of `device drivers/gpio/pca953x` (gpio extender) so it doesn't
+burn half of the Edison's CPU.
+
+4. Make sure to put the `/edison-src/out/current/build/tmp/work/edison-poky-linux/linux-yocto/3.10.17-r0/package/lib/modules`
+folder into the `.ext4` file (`/lib/modules/` folder).
+
 3. Flash jubilinux to the Edison. Plug the Gateway into your computer with
 the right micro USB connected (the one inbetween the two other USB headers
 on the board. Make sure the switch near the USB headers is flipped to the left.
