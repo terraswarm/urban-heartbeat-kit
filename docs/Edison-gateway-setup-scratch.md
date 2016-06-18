@@ -77,7 +77,6 @@ the edison over UART with something like:
 7. Allow `debian` to sudo:
 
         usermod -a -G sudo debian
-        # exit su with ctrl+d
 
 8. Get rid of edison user.
 
