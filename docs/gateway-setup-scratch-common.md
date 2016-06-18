@@ -126,6 +126,7 @@ Software Setup
 20. Clone gateway github repository
 
         git clone https://github.com/lab11/gateway.git
+        git clone https://github.com/lab11/gateway-tools.git
         git clone https://github.com/terraswarm/urban-heartbeat-kit.git
 
 21. Install gateway dependencies.
@@ -135,8 +136,6 @@ Software Setup
         # Then in each subfolder
         ln - ../node_modules .
         npm i
-
-        pushd urban-heartbeat-kit/examples && npm i && popd
 
 22. Setup ble-gateway to start on boot.
 
