@@ -29,12 +29,11 @@ Software Setup
 
 1. Change hostname.
 
-        sudo su
-        echo 'swarmgateway' > /etc/hostname
+        sudo sh -c 'echo "swarmgateway" > /etc/hostname'
         
 2. Add swarmgateway to hosts:
 
-        echo "127.0.1.1    swarmgateway" >> /etc/hosts
+        sudo sh -c 'echo "127.0.1.1    swarmgateway" >> /etc/hosts'
 
 1. Install MQTT:
 
