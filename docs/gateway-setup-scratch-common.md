@@ -185,6 +185,19 @@ See Beaglebone Black specific instructions [here](https://github.com/terraswarm/
         sudo sh -c "echo '/dev/mmcblk1p1      /media/sdcard auto  defaults     1   1\n' >> /etc/fstab"
 
 
+25. Set the base `/etc/network/interfaces` file. Should look something like:
+
+        auto lo
+        iface lo inet loopback
+
+        auto eth0
+        iface eth0 inet dhcp
+          hwaddress ether c0:98:e5:c0:00:16
+
+        auto wlan0
+        iface wlan0 inet dhcp
+
+
 Install Monitoring
 ------------------
 
