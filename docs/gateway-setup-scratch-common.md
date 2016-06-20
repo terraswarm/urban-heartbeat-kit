@@ -207,22 +207,17 @@ Use sensu for monitoring gateways and devices.
 
         wget https://sensuapp.org/install.sh
         sudo bash install.sh
-        sudo apt-get update
-        sudo apt-get install sensu
+        sudo apt update
+        sudo apt install sensu
         
-2. Change permissions on sensu conf folder so we can add confs for devices.
-
-        sudo chown -R sensu:sensu /etc/sensu/conf.d
-
 3. Setup systemd for sensu
 
         sudo rm /etc/init.d/sensu-client
         cd /etc/systemd/system
         sudo wget https://raw.githubusercontent.com/sensu/sensu-build/master/sensu_configs/systemd/sensu-client.service
 
-3. Get the gateway scripts
+3. Get the gateway scripts dependencies
 
-        git clone https://github.com/lab11/gateway-tools
         cd gateway-tools/gateway
         npm install
 
@@ -238,15 +233,11 @@ Use sensu for monitoring gateways and devices.
         "password": "password"
       },
       "client": {
-        "name": "gateway-macaddr",
+        "name": "<gateway-macaddr>",
         "address": "192.168.1.2",
         "subscriptions": [
           "swarm-gateway"
         ]
-      },
-      "socket": {
-        "bind": "127.0.0.1",
-        "port": 3031
       }
     }
     ```
