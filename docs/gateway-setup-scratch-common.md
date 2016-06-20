@@ -215,6 +215,7 @@ Use sensu for monitoring gateways and devices.
         sudo rm /etc/init.d/sensu-client
         cd /etc/systemd/system
         sudo wget https://raw.githubusercontent.com/sensu/sensu-build/master/sensu_configs/systemd/sensu-client.service
+        sudo systemctl enable sensu-client.service
 
 3. Get the gateway scripts dependencies
 
