@@ -302,7 +302,7 @@ have access to to support ddns. **Be careful with trailing .'s throughout**
         - `named-checkzone device.lab11.eecs.umich.edu /var/lib/bind/db.device.lab11.eecs.umich.edu`
      * The bind server must be able to write to the database file AND be able to create new files in the same directory as the database file. See the next point.
      * AppArmor / SELinux will stop things from working out-of-the-box on most installs, see http://askubuntu.com/questions/172030/how-to-allow-bind-in-app-armor
-        - Note you may want to change that AppArmor example to allow for any file in the directory (/*) or subdirectories (/**)
+        - Note you may want to change that AppArmor example to allow for any file in the directory (`/*`) or subdirectories (`/**`)
 
 3. Set up the gateways
 
