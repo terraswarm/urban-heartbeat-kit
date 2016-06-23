@@ -29,21 +29,78 @@ burn half of the Edison's CPU.
 4. Make sure to put the `/edison-src/out/current/build/tmp/work/edison-poky-linux/linux-yocto/3.10.17-r0/package/lib/modules`
 folder into the `.ext4` file (`/lib/modules/` folder).
 
-3. Flash jubilinux to the Edison. Plug the Gateway into your computer with
-the right micro USB connected (the one inbetween the two other USB headers
-on the board. Make sure the switch near the USB headers is flipped to the left.
+3. Perform any device-specific configuration
+ 
+	If there are any configruation files to load, if you'd like to assign a
+	specific MAC address, or if you'd like to install any special software,
+	it's much easier to do that now by mounting the image locally and making
+	any changes before flashing.
+
+	(n.b. https://github.com/alperakcan/fuse-ext2 worked well for mounting
+	ext4 images on mac)
+
+3. Flash jubilinux to the Edison.
+
+	**Before plugging in the gateway** have a terminal window open and ready to
+	connect (i.e. `miniterm /dev/tty.u[] 115200`, where `[]` is your cursor ready
+	to hit tab). When the edison boots you have a short window to "Hit any key to
+	stop autoboot".
+
+	Plug the Gateway into your computer with the right micro USB connected (the one
+	inbetween the two other USB headers on the board. Make sure the switch near the
+	USB headers is flipped to the left.
+
+	In your serial console, type `run do_flash`:
+
+		Hit any key to stop autoboot:  0
+		boot > run do_flash
+		Saving Environment to MMC...
+		Writing to MMC(0)... done
+		GADGET DRIVER: usb_dnl_dfu
+
+	Then, in another terminal:
 
         cd jubilinux
-        sudo ./flashall.sh
+        (sudo) ./flashall.sh
 
-    You may need to keep the edison from booting to the kernel. To do this,
-    Immediately after powering it start connecting to the serial port.
-    You need to catch it early enough so that you see
-    `*** Ready to receive application ***`. That will sit there for a bit,
-    when the next thing prints, hit any key (perhaps `f`) to keep it from
-    booting any further. Then type `run do_flash`. Now the edison
-    is ready for you to run `flashall.sh`.
+	This will take a while to run. It will flash several things, and then reboot the board
+	
+		$ ./flashall.sh
+		Using U-Boot target: edison-defaultcdc
+		Now waiting for dfu device 8087:0a99
+		Please plug and reboot the board
+		Flashing IFWI
+		Download	[=========================] 100%      4194304 bytes
+		Download	[=========================] 100%      4194304 bytes
+		Flashing U-Boot
+		Download	[=========================] 100%       245760 bytes
+		Flashing U-Boot Environment
+		Copying data from PC to DFU device
+		Flashing U-Boot Environment Backup
+		Download	[=========================] 100%        65536 bytes
+		Rebooting to apply partition changes
+		Now waiting for dfu device 8087:0a99
 
+	Sometimes, the reboot will correctly allow flashall to keep going, sometimes the
+	kernel will manage to boot again, in which case you'll have to manually reboot
+	the Edison, catch it (any key) and `run do_flash` again. The flash script will
+	automatically resume:
+	
+	(n.b. if you'd left this unattended, your terminal may be full of garbage b/c
+	the Edison ups the baudrate of the serial link at some point during bootup.
+	Everything is still fine, just reboot and it will reset to 115200.)
+	
+		Flashing boot partition (kernel)
+		Copying data from PC to DFU device
+		Flashing rootfs, (it can take up to 10 minutes... Please be patient)
+		Download	[=========================] 100%   1610612736 bytes   <---- LOOK CAREFULLY
+		Flashing home, (it can take up to 10 minutes... Please be patient)
+		Copying data from PC to DFU device
+		Rebooting
+		U-boot & Kernel System Flash Success...
+	
+	This step will take a while. Be sure to look carefully at each flash step, as
+	it will sometimes fail, but the flash script will print success anyway.
 
 4. Plug in a micro USB cable to the left micro USB port. Connect to
 the edison over UART with something like:
