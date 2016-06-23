@@ -133,9 +133,7 @@ Software Setup
 
         cd gateway/software
         mkdir node_modules
-        # Then in each subfolder
-        ln - ../node_modules .
-        npm i
+        for i in * ; do if [[ -d $i ]]; then cd $i; ln -s ../node_modules .; npm i; cd ../; fi; done
 
 22. Setup ble-gateway to start on boot.
 
