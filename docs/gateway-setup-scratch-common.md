@@ -225,11 +225,11 @@ Use sensu for monitoring gateways and devices.
      ```
     {
       "rabbitmq": {
-        "host": "host",
+        "host": "<host>",
         "port": 5672,
         "vhost": "/sensu",
-        "user": "sensu",
-        "password": "password"
+        "user": "<sensu>",
+        "password": "<password>"
       },
       "client": {
         "name": "<gateway-macaddr>",
@@ -246,7 +246,7 @@ Optional: Set up dynamic DNS
 ----------------------------
 
 You will need to set up dynamic DNS support on a DNS server that you
-have access to to support ddns. **Be careful with trailing .'s throughout**
+have access to to support ddns. **Be careful with trailing `.`s throughout**
 
 1. Generate keys
 
