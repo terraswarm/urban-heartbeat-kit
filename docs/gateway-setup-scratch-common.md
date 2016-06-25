@@ -3,6 +3,7 @@
 
 
 - [Gateway Software Setup](#gateway-software-setup)
+  - [Optional: Enterprise Wireless Setup with NetworkManager](#enterprise-networkmanager)
   - [Software Setup](#software-setup)
   - [Optional: Install Node-RED](#optional-install-node-red)
   - [Audio](#audio)
@@ -15,11 +16,55 @@ Gateway Software Setup
 
 These instructions should be shared between gateway platforms running Debian.
 
+Optional: Enterprise Wireless Setup with NetworkManager
+---------------------------------------------
+
+This configuration works for MWireless (University of Michigan), and should work
+for others with minor modifications. Ensure you have downloaded and placed the
+network certificate in `/etc/NetworkManager/<certificate-name>.
+
+1. For MWireless:
+
+        curl -O http://www.incommon.org/certificates/repository/sha384%20Intermediate%20cert.txt
+        sudo mv sha384%20Intermediate%20cert.txt /etc/NetworkManager/mwireless.crt
+
+2. Use nmcli to generate a config file for your network:
+
+        sudo nmcli con edit type wifi con-name <connection-id>
+        set wifi.ssid <ssid>
+        save
+        q
+
+    Where `ssid` is the ssid of your network, and `connection-id` is an arbitrary
+    name for the connection. Making this the same as the `ssid` is a good
+    choice.
+
+3. Edit the config file `/etc/NetworkManager/system-connections/<connection-id>`
+   to include the following sections:
+
+        [wifi-security]
+        auth-alg=open
+        key-mgmt=wpa-eap
+        
+        [802-1x]
+        eap=peap;
+        identity=<username>
+        password=<password>
+        phase2-auth=mschapv2
+        phase2-ca-cert=/etc/NetworkManager/<certificate-name>
+        
+    Make sure to fill in `username`, `password`, `certificate-name`.
+    
+3. Reload config and activate connection
+
+        sudo nmcli con reload
+        # might be a good idea to reboot
+        sudo nmcli con up <connection-id>
 
 Software Setup
 --------------
 
-6. Disable root SSH.
+1. Disable root SSH.
 
         sudo sed -i 's/PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config
         
