@@ -23,6 +23,10 @@ This configuration works for MWireless (University of Michigan), and should work
 for others with minor modifications. Ensure you have downloaded and placed the
 network certificate in `/etc/NetworkManager/<certificate-name>.
 
+If switching from using ifupdown (using `/etc/network/interfaces`), make sure to comment
+out or delete your wireless interface from `/etc/network/interfaces` before
+configuring NetworkManager.
+
 1. For MWireless:
 
         curl -O http://www.incommon.org/certificates/repository/sha384%20Intermediate%20cert.txt
