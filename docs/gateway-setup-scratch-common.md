@@ -3,7 +3,6 @@
 
 
 - [Gateway Software Setup](#gateway-software-setup)
-  - [Optional: Enterprise Wireless Setup with NetworkManager](#enterprise-networkmanager)
   - [Software Setup](#software-setup)
   - [Optional: Install Node-RED](#optional-install-node-red)
   - [Audio](#audio)
@@ -274,7 +273,7 @@ configuring NetworkManager.
     choice.ur network, and `connection-id` is an arbitrary
     name for the connection
 
-3. Edit the config file `/etc/NetworkManager/system-connections/<connection-id>`
+3. Edit the config file `/etc/NetworkManager/system-connections/MWireless`
    to include the following sections:
 
         [wifi-security]
@@ -286,7 +285,7 @@ configuring NetworkManager.
         identity=<username>
         password=<password>
         phase2-auth=mschapv2
-        phase2-ca-cert=/etc/NetworkManager/<certificate-name>
+        phase2-ca-cert=/etc/NetworkManager/mwireless.crt
         
     Make sure to fill in `username`, `password`, `certificate-name`.
     
@@ -294,7 +293,7 @@ configuring NetworkManager.
 
         sudo nmcli con reload
         # might be a good idea to reboot
-        sudo nmcli con up <connection-id>
+        sudo nmcli con up MWireless
 
 
 
