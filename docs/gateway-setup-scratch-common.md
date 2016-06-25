@@ -265,13 +265,9 @@ configuring NetworkManager.
 2. Use nmcli to generate a config file for your network:
 
         sudo nmcli con edit type wifi con-name MWireless
-        set wifi.ssid MWireless
-        save
-        q
-
-    Where `ssid` is the ssid of yo. Making this the same as the `ssid` is a good
-    choice.ur network, and `connection-id` is an arbitrary
-    name for the connection
+          set wifi.ssid MWireless
+          save
+          q
 
 3. Edit the config file `/etc/NetworkManager/system-connections/MWireless`
    to include the following sections:
@@ -287,12 +283,11 @@ configuring NetworkManager.
         phase2-auth=mschapv2
         phase2-ca-cert=/etc/NetworkManager/mwireless.crt
         
-    Make sure to fill in `username`, `password`, `certificate-name`.
+    Make sure to fill in `username` and `password`.
     
 3. Reload config and activate connection
 
         sudo nmcli con reload
-        # might be a good idea to reboot
         sudo nmcli con up MWireless
 
 
