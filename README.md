@@ -32,7 +32,7 @@ The two gateway hardware platforms are [GAP](https://github.com/lab11/gap) and
 an [Edison based version](https://github.com/lab11/IntelEdisonGateway).
 
 The gateway in the kit is pre-configured. If you want to commission a new
-BeagleBone Black, there are two options:
+gateway, there are two options:
  * [from image](docs/BBB-gateway-setup-image.md)
  * [from scratch](docs/BBB-gateway-setup-from-scratch.md)
 
