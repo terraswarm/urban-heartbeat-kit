@@ -68,7 +68,7 @@ temperature, humidity, light, pressure, and vibration each second.
 whether the sensor is currently detecting motion, whether it has detected motion since the last tranmsmitted packet,
 and whether it has detected motion in the last minute.
 
-     <img src="https://raw.githubusercontent.com/lab11/blees/master/media/blink_large_1000x790.jpg" alt="BLEES" width="25%;">
+     <img src="https://raw.githubusercontent.com/lab11/blees/master/media/blink_large_1000x790.jpg" alt="BLEES" width="25%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://raw.githubusercontent.com/lab11/blees/master/media/blink_small_1000x994.jpg" alt="BLEES" width="20%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://raw.githubusercontent.com/lab11/blees/master/media/blink_small_case_1000x992.jpg" alt="BLEES" width="20%;">
 
 1. **[Ligeiro](https://github.com/lab11/monjolo/tree/master/nrf51822/apps/monjolo)**: An energy-harvesting light sensor.
 Upon harvesting enough energy to power itself from its onboard photovoltaic cell, it advertises
