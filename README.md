@@ -70,4 +70,12 @@ and whether it has detected motion in the last minute.
 
      <img src="https://raw.githubusercontent.com/lab11/blees/master/media/blink_large_1000x790.jpg" alt="BLEES" width="25%;">
 
+1. **[Ligeiro](https://github.com/lab11/monjolo/tree/master/nrf51822/apps/monjolo)**: An energy-harvesting light sensor.
+Upon harvesting enough energy to power itself from its onboard photovoltaic cell, it advertises
+over BLE a counter of its total number of wakeups. The rate of increase of this counter increases
+as light intensity increases.
+
+    <img src="https://raw.githubusercontent.com/lab11/monjolo/master/media/ligeiro_1000x562.jpg" alt="Ligeiro" width="25%">
+
+
 
