@@ -75,7 +75,8 @@ Upon harvesting enough energy to power itself from its onboard photovoltaic cell
 over BLE a counter of its total number of wakeups. The rate of increase of this counter increases
 as light intensity increases.
 
-    <img src="https://raw.githubusercontent.com/lab11/monjolo/master/media/ligeiro_1000x562.jpg" alt="Ligeiro" width="25%">
+    <img src="https://raw.githubusercontent.com/lab11/monjolo/master/media/ligeiro_1000x562.jpg" alt="Ligeiro" width="25%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://raw.githubusercontent.com/lab11/monjolo/master/media/ligeiro_in_case_thin_1000x354.jpg" alt="Ligeiro" width="40%">
+    
 
 
 
