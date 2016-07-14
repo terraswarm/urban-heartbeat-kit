@@ -55,7 +55,7 @@ Sensors
 1. **[PowerBlade](https://github.com/lab11/powerblade)**: A 1 inch by 1 inch power meter. Advertises
 power readings every second over BLE.
 
-    <img src="https://raw.githubusercontent.com/lab11/powerblade/master/images/powerblade.png" alt="PowerBlade" width="30%;">
+    <img src="https://raw.githubusercontent.com/lab11/powerblade/master/images/powerblade_isometric_v5_1000x720.jpg" alt="PowerBlade" width="30%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://raw.githubusercontent.com/lab11/powerblade/master/images/powerblade_plug_profile_slim_937x1000.jpg" alt="PowerBlade" width="20%;">
 
 
 
