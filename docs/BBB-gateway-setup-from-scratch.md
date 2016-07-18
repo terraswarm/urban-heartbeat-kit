@@ -87,7 +87,8 @@ The GAP overlay and others are setup in a repository also maintained by RCN.
 
 13. Set up Wifi (Tested with the Edimax EW-7811Un)
 	
-		Edit the network interfaces configuration file(wpa-enterprise, MWireless specific)
+		Edit the network interfaces configuration file(wpa-enterprise, MWireless specific).
+		This step can be skipped if you are going to use NetworkManager
 
 				sudo vim /etc/network/interfaces
 				#edit the wifi section be as follows
@@ -109,7 +110,7 @@ The GAP overlay and others are setup in a repository also maintained by RCN.
 		Download the cert file and place it in /etc/network/
 
 				curl -O http://www.incommon.org/certificates/repository/sha384%20Intermediate%20cert.txt
-				mv sha384%20Intermediate%20cert.txt /etc/network/mwireless.crt
+				sudo mv sha384%20Intermediate%20cert.txt /etc/network/mwireless.crt
 
 		Edit the udev rules to make sure that the network interface is always wlan0
 
