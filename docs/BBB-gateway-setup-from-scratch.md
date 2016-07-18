@@ -41,7 +41,7 @@ for the BBB. I used:
 
 
 
-9. Upgrade the kernel
+9. Upgrade the kernel. First, run `uname -a` if the kernel is 4.4.0 or greater, skip this step.
 
         sudo /opt/scripts/tools/update_kernel.sh --beta --bone-channel
 
