@@ -31,13 +31,27 @@ folder into the `.ext4` file (`/lib/modules/` folder).
 
 3. Perform any device-specific configuration
  
-	If there are any configruation files to load, if you'd like to assign a
+	If there are any configuration files to load, if you'd like to assign a
 	specific MAC address, or if you'd like to install any special software,
 	it's much easier to do that now by mounting the image locally and making
 	any changes before flashing.
 
+	To make changes, mount the `.home` and `.root` files. Any home directory changes, such as
+	updating repositories are done in the `.home` partition. Any configuration files are edited
+	in the `.root` file.
+	
 	(n.b. https://github.com/alperakcan/fuse-ext2 worked well for mounting
 	ext4 images on mac)
+	
+	When flashing a gateway, edit `etc/network/interfaces` to change the MAC address of the
+	device. Example
+
+		auto eth0
+		iface eth0 inet dhcp
+			hwaddress ether c0:98:e5:c0:00:10
+
+	If using sensu, its configuration file, `etc/sensu/conf.d/client.json`, must be edited with
+    	the proper client name and address.
 
 3. Flash jubilinux to the Edison.
 
@@ -61,7 +75,15 @@ folder into the `.ext4` file (`/lib/modules/` folder).
 	Then, in another terminal:
 
         cd jubilinux
-        (sudo) ./flashall.sh
+        sudo ./flashall.sh
+
+	If you get errors, you may have to install drivers in windows
+	
+		[Intel Driver](https://software.intel.com/en-us/iot/hardware/edison/downloads)
+		[D2XX Direct Driver](http://www.ftdichip.com/Drivers/D2XX.htm)
+		
+	Errors also occur if you have not run the script as root. You can run `sudo dfu-util -l`
+	to check that the Edison DFU device has been found.
 
 	This will take a while to run. It will flash several things, and then reboot the board
 	
