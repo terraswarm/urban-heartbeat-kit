@@ -129,7 +129,6 @@ Software Setup
 
         git clone https://github.com/lab11/gateway.git
         git clone https://github.com/lab11/gateway-tools.git
-        git clone https://github.com/terraswarm/urban-heartbeat-kit.git
 
 21. Install gateway dependencies.
 
