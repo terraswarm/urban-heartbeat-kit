@@ -139,7 +139,6 @@ Software Setup
 22. Setup ble-gateway to start on boot.
 
         sudo cp gateway/systemd/* /etc/systemd/system/
-        sudo cp urban-heartbeat-kit/systemd/* /etc/systemd/system/
         sudo systemctl daemon-reload
         sudo systemctl disable lighttpd
         sudo systemctl enable adv-gateway-ip
