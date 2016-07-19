@@ -67,7 +67,8 @@ Software Setup
         tar xf Python-3.5.1.tgz
         cd Python-3.5.1
         ./configure
-        make sudo make install
+        make
+        sudo make install
 
 14. (Optional) Install some Python dependencies.
 
