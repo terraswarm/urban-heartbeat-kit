@@ -213,6 +213,7 @@ Use sensu for monitoring gateways and devices.
 
         sudo apt update
         sudo apt install sensu
+        rm install.sh
         
 3. Setup systemd for sensu
 
