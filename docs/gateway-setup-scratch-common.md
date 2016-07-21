@@ -301,6 +301,8 @@ configuring NetworkManager.
 Optional: Set up dynamic DNS
 ----------------------------
 
+Skip to step `Set up the gateways` if a DNS server is already set up.
+
 You will need to set up dynamic DNS support on a DNS server that you
 have access to to support ddns. **Be careful with trailing `.`s throughout**
 
@@ -363,6 +365,11 @@ have access to to support ddns. **Be careful with trailing `.`s throughout**
 3. Set up the gateways
 
   On the gateway, you'll need to copy the keys (**both** the `.key` and `.private`) to `/etc/swarm-gateway/ddns/`.
+
+  Install dependencies
+  
+      sudo pip3 install dnspython3
+      sudo apt install dnsutils
 
   Install `ddns` updates as a cron job (`cp gateway/cron/ddns /etc/cron.hourly`)
     - FIXME: Some configuration options are hardcoded into this script currently, you'll need to update them
