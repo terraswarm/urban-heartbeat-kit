@@ -226,7 +226,7 @@ Use sensu for monitoring gateways and devices.
         cd gateway-tools/gateway
         npm install
 
-4. Then need `/etc/sensu/conf.d/client.json`.
+4. Then create `/etc/sensu/conf.d/client.json`. Make sure the proper client name and address for the specific gateway.
 
      ```
     {
