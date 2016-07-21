@@ -44,6 +44,10 @@ Software Setup
         sudo apt update
         sudo apt install mosquitto
 
+    **Important:** on BeagleBone gateways, a different version of libwebsockets must be installed
+
+        sudo apt-get install libwebsockets3=1.2.2-1
+
 11. Setup config for mosquitto:
 
         sudo sh -c 'echo "log_dest none\nlog_type error\nconnection_messages false" > /etc/mosquitto/conf.d/swarmgateway.conf'
