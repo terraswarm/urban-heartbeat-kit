@@ -425,7 +425,21 @@ Optional: Collect Triumvi Data (Intel Edison only)
         cmake .. -DBUILDSWIGNODE=OFF
         make
         sudo make install
-        
+
+3. Add library file to `/etc/profile`
+
+        sudo vim /etc/profile
+
+    Add the lines
+
+        LD_LIBRARY_PATH=/usr/local/lib
+        export LD_LIBRARY_PATH
+
+    Save and exit. Then run
+
+        sudo ldconfig
+
+
 2. Install paho-mqtt python package (may already be done)
 
         sudo apt install python-pip
