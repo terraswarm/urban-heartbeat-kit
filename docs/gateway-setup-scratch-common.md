@@ -427,10 +427,12 @@ Optional: Collect Triumvi Data (Intel Edison only)
         sudo make install
         
 2. Install paho-mqtt python package (may already be done)
+
         sudo apt install python-pip
         sudo pip install paho-mqtt
 
 3. Enable cc2538-triumvi-gateway
+
         sudo cp gateway/systemd/cc2538-triumvi-gateway.service /etc/systemd/system/
         sudo systemctl enable cc2538-triumvi-gateway
 
