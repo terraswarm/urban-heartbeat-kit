@@ -206,6 +206,11 @@ Use sensu for monitoring gateways and devices.
 
         wget https://sensuapp.org/install.sh
         sudo bash install.sh
+
+    Yes, install the Sensu Core software repository
+
+    No, do not install the Sensu Enterprise software repository
+
         sudo apt update
         sudo apt install sensu
         
