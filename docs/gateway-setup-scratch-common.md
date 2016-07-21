@@ -70,8 +70,9 @@ Software Setup
         make
         sudo make install
 
-14. (Optional) Install some Python dependencies.
+14. Install some Python dependencies.
 
+        sudo apt-get install python-pip python3-pip
         sudo pip install paho-mqtt
         sudo pip install websocket
         sudo pip3.5 install hbmqtt
@@ -414,6 +415,24 @@ and make other configuration changes by modifying
 `/home/debian/.node-red/settings.js` and restarting the service with
 `sudo systemctl restart node-red`.
 
+Optional: Collect Triumvi Data (Intel Edison only)
+--------------------------------------------------
+
+1. Install `mraa`:
+
+        git clone https://github.com/intel-iot-devkit/mraa.git
+        mkdir mraa/build && cd $_
+        cmake .. -DBUILDSWIGNODE=OFF
+        make
+        sudo make install
+        
+2. Install paho-mqtt python package (may already be done)
+        sudo apt install python-pip
+        sudo pip install paho-mqtt
+
+3. Enable cc2538-triumvi-gateway
+        sudo cp gateway/systemd/cc2538-triumvi-gateway.service /etc/systemd/system/
+        sudo systemctl enable cc2538-triumvi-gateway
 
 Audio
 -----
