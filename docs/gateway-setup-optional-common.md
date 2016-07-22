@@ -324,7 +324,7 @@ Push PowerBlade data to SQL
 
 4. Enable service
 
-        sudo cp ~/powerblade/software/gateway/gateway-mqtt-sql.service /etc/systemd/system/
+        sudo cp ~/powerblade/software/gateway/gateway-mqtt-sql/gateway-mqtt-sql.service /etc/systemd/system/
         sudo systemctl enable gateway-mqtt-sql
         sudo systemctl start gateway-mqtt-sql
 
