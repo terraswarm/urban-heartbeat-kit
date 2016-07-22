@@ -320,7 +320,7 @@ Push PowerBlade data to SQL
 
     For umich users, the config can be copied from shed
 
-        sudo scp <user@computer>:~/shed/projects/gateway/powerblade-*.conf /etc/swarm-gateway/
+        sudo scp <user@computer>:~/shed/projects/powerblade/powerblade_deployment/powerblade-*.conf /etc/swarm-gateway/
 
 4. Enable service
 
