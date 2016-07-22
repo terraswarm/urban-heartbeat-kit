@@ -1,7 +1,7 @@
 Building kernel for Dart MX6
 ============================
 
-http://www.variscite.com/products/system-on-module-som/cortex-a9/dart-mx6-cpu-freescale-imx6
+http://www.variscite.com/products/system-on-module-som/cortex-a7/dart-6ul-freescale-imx-6ul?highlight=WyJpbXg2dWwiXQ==
 
 
 Steps
