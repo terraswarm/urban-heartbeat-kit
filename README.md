@@ -33,8 +33,8 @@ an [Edison based version](https://github.com/lab11/IntelEdisonGateway).
 
 The gateway in the kit is pre-configured. If you want to commission a new
 gateway, there are two options:
- * [from image](docs/BBB-gateway-setup-image.md)
- * [from scratch](docs/BBB-gateway-setup-from-scratch.md)
+ * [Intel Edison](docs/Edison-gateway-setup-scratch.md)
+ * [BeagleBone Black](docs/BBB-gateway-setup-from-scratch.md)
 
 
 ### Software
