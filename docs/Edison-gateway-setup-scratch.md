@@ -166,16 +166,6 @@ the edison over UART with something like:
         apt install vim bluetooth bluez libbluetooth-dev libudev-dev libavahi-compat-libdnssd-dev
 
 
-Triumvi Setup
--------------
-
-9. Install `mraa`:
-
-        git clone https://github.com/intel-iot-devkit/mraa.git
-        mkdir mraa/build && cd $_
-        cmake .. -DBUILDSWIGNODE=OFF
-        make
-        sudo make install
 
 Remaining Setup
 ---------------
