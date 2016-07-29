@@ -150,7 +150,6 @@ Software Setup
         sudo systemctl enable app-runner
         sudo systemctl enable ble-address-sniffer-mqtt
         sudo systemctl enable ble-gateway-mqtt
-        sudo systemctl enable gateway-mqtt-topics
         sudo systemctl enable gateway-server
         sudo systemctl enable gateway-ssdp
 
@@ -159,15 +158,6 @@ Software Setup
         mkdir ~/gateway-tools/apps-enabled
         sudo mkdir /etc/swarm-gateway
         sudo sh -c 'echo "app_dir = /home/debian/gateway-tools/apps-enabled" > /etc/swarm-gateway/app-runner.conf'
-
-23. For the Edison, we also want to capture 15.4 packets
-from the CC2538.
-
-    Edison:
-
-        git clone https://github.com/lab11/IntelEdisonGateway.git
-        sudo cp IntelEdisonGateway/Triumvi/systemd/* /etc/systemd/system
-        sudo systemctl enable cc2538-gateway-mqtt
 
 23. Configure LEDs at boot:
 
@@ -205,6 +195,4 @@ Optional Features
 -----------------
 
 See the [optional instructions](https://github.com/terraswarm/urban-heartbeat-kit/blob/master/docs/gateway-setup-optional-common.md).
-
-
 
