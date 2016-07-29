@@ -265,40 +265,21 @@ Collect data from [Monjolo](https://github.com/lab11/monjolo) sensors over 802.1
         sudo systemctl start ieee802154-monjolo-gateway
 
 
-Collect Triumvi Data (Intel Edison only)
-----------------------------------------
+Collect Triumvi Data
+-------------------
 
-1. Install `mraa`:
+1. Copy [triumvi.conf](https://github.com/lab11/gateway/tree/master/software/ieee802154-triumvi-gateway) file to `/etc/swarm-gateway/`
 
-        git clone https://github.com/intel-iot-devkit/mraa.git
-        mkdir mraa/build && cd $_
-        cmake .. -DBUILDSWIGNODE=OFF
-        make
-        sudo make install
+    For umich users, the config can be copied from shed
 
-3. Add library file to `/etc/profile`
+        sudo scp <user@computer>:~/shed/projects/gateway/triumvi.conf /etc/swarm-gateway/
 
-        sudo vim /etc/profile
+2. Enable service
 
-    Add the lines
+        sudo cp ~/gateway/systemd/ieee802154-triumvi-gateway.service /etc/systemd/system/
+        sudo systemctl enable ieee802154-triumvi-gateway
+        sudo systemctl start ieee802154-triumvi-gateway
 
-        LD_LIBRARY_PATH=/usr/local/lib
-        export LD_LIBRARY_PATH
-
-    Save and exit. Then run
-
-        sudo ldconfig
-
-
-2. Install paho-mqtt python package (may already be done)
-
-        sudo apt install python-pip
-        sudo pip install paho-mqtt
-
-3. Enable cc2538-triumvi-gateway
-
-        sudo cp gateway/systemd/cc2538-triumvi-gateway.service /etc/systemd/system/
-        sudo systemctl enable cc2538-triumvi-gateway
 
 
 Push PowerBlade data to SQL
