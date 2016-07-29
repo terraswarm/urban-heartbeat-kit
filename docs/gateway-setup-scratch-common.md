@@ -1,15 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
-
-- [Gateway Software Setup](#gateway-software-setup)
-  - [Software Setup](#software-setup)
-  - [Optional: Install Node-RED](#optional-install-node-red)
-  - [Audio](#audio)
-  - [GDP](#gdp)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 Gateway Software Setup
 ======================
 
