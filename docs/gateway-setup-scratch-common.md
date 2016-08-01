@@ -136,7 +136,6 @@ Software Setup
         sudo systemctl disable lighttpd
         sudo systemctl enable adv-gateway-ip
         sudo systemctl enable app-runner
-        sudo systemctl enable ble-address-sniffer-mqtt
         sudo systemctl enable ble-gateway-mqtt
         sudo systemctl enable gateway-server
         sudo systemctl enable gateway-ssdp
