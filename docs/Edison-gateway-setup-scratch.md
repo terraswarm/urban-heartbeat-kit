@@ -153,9 +153,10 @@ the edison over UART with something like:
 
         adduser debian
 
-7. Allow `debian` to sudo:
+7. Allow `debian` to sudo and read log files:
 
         usermod -a -G sudo debian
+        usermod -a -G adm debian
 
 8. Get rid of edison user.
 
