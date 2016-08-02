@@ -1,3 +1,14 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [Gateway Software Setup](#gateway-software-setup)
+  - [Software Setup](#software-setup)
+  - [Version Bump Changes](#version-bump-changes)
+  - [Optional Features](#optional-features)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 Gateway Software Setup
 ======================
 
@@ -114,6 +125,28 @@ Software Setup
     
         sudo sed -i "s\#Banner /etc/issue.net\Banner /etc/issue.net\g" /etc/ssh/sshd_config
 
+19. Fix the `PS1` to display some useful information (version, IP, MAC) about the current gateway
+
+        v1.x XXX.XXX.XXX.XXX :XX ~$
+
+    Edit `~/.bashrc`:
+
+        Add Line 41:
+
+        39 case "$TERM" in
+        40     xterm-color) color_prompt=yes;;
+        41     xterm-256color) color_prompt=yes;;
+        42 esac
+
+        Replaces lines 61 and 63, fixing the 'v1.x' with current version in each line:
+
+        60 if [ "$color_prompt" = yes ]; then
+        61     PS1="\[$(tput setaf 4)\]v1.x \[$(tput setaf 3)\]$(ip route get 1 | cut -d' ' -f8) :$(cat /sys/class/net/eth0/address | cut -d':' -f6)\[$(tput sgr0)\] \w$ "
+        62 else
+        63     PS1="v1.x $(ip route get 1 | cut -d' ' -f8) :$(cat /sys/class/net/eth0/address | cut -d':' -f6) \w$ "
+        64 fi
+                       |line 63 x         |line 61 x
+
 19. Clean up home directory
 
         rm -rf /home/debian/*
@@ -177,6 +210,12 @@ See Beaglebone Black specific instructions [here](https://github.com/terraswarm/
         auto wlan0
         iface wlan0 inet dhcp
 
+
+Version Bump Changes
+--------------------
+
+1. Fix the SSH banner. Line 3 of `/etc/issue.net`
+1. Fix the `PS1` prompt. Lines 61 and 63 of `~/.bashrc`
 
 Optional Features
 -----------------
