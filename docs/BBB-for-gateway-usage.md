@@ -70,7 +70,7 @@ any of the discovery protocols, you can use that directly.
 5. **Use nmap**: Scan for all devices with port 3001 (the websockets port)
 open:
 
-        nmap -sV -p3001 --open <any ip address on the gateway network>/24
+        nmap -sV -p80 --open <any ip address on the gateway network>/24
 
     You could also use ports 1883 (MQTT), 80, or 22.
 
