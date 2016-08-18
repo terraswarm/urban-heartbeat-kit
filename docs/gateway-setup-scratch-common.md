@@ -49,7 +49,7 @@ Software Setup
 
 11. Setup config for mosquitto:
 
-        sudo sh -c 'echo "log_dest none\nlog_type error\nconnection_messages false\n\nlistener 9001\nprotocol websockets" > /etc/mosquitto/conf.d/swarmgateway.conf'
+        sudo sh -c 'echo "log_dest none\nlog_type error\nconnection_messages false\n\nlistener 9001\nprotocol websockets\n\nlistener 1883\nprotocol mqtt" > /etc/mosquitto/conf.d/swarmgateway.conf'
 
 13. Setup a mDNS entry for MQTT so it can be discovered. Create
 `/etc/avahi/services/mqtt.service` and add:
