@@ -26,6 +26,17 @@ directions. Make sure to both enable the USB Ethernet chip (as specified in thos
 and make a module of `device drivers/gpio/pca953x` (gpio extender) so it doesn't
 burn half of the Edison's CPU.
 
+  1. build the kernel
+      ```
+      wget http://iotdk.intel.com/src/3.5/edison/iot-devkit-yp-poky-edison-20160606.zip
+      unzip iot-devkit-yp-poky-edison-20160606.zip
+      apt install texinfo gawk chrpath
+      cd iot-devkit-yp-poky-edison-20160606/poky
+      ln -s meta-intel-edison/utils/Makefile.mk Makefile
+      make setup
+      make edison-image
+      ```
+
 4. Make sure to put the `/edison-src/out/current/build/tmp/work/edison-poky-linux/linux-yocto/3.10.17-r0/package/lib/modules`
 folder into the `.ext4` file (`/lib/modules/` folder).
 
