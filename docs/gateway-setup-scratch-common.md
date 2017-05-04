@@ -35,6 +35,15 @@ Software Setup
 
         sudo sh -c 'echo "127.0.1.1    swarmgateway" >> /etc/hosts'
 
+3. Setup the gateway to configure its address on boot.
+
+    Edison:
+    
+    - Add to `/etc/rc.local`:
+    
+            # Setup the correct gateway ID
+            /home/debian/gateway/startup/set_gateway_id.sh
+
 1. Install MQTT:
 
         wget http://repo.mosquitto.org/debian/mosquitto-repo.gpg.key
