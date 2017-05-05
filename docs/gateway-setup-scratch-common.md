@@ -61,6 +61,12 @@ on boot.
     Edison:
     
         sudo apt install libqmi-utils
+    
+    - Then create the config file `/etc/qmi-network.conf`:
+    
+            APN=VZWINTERNET
+            
+        for Verizon SIM card.
 
 1. Install MQTT:
 
