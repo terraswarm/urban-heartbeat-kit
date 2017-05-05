@@ -61,6 +61,7 @@ on boot.
     Edison:
     
         sudo apt install libqmi-utils
+        sudo systemctl disable ModemManager
     
     - Then create the config file `/etc/qmi-network.conf`:
     
