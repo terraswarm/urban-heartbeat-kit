@@ -56,6 +56,12 @@ on boot.
             # Configure the CC2538
             /home/debian/gateway/startup/edison-v3-cc2538/flash_cc2538.sh
 
+3. If using a QMI supported cell radio (like LE910):
+
+    Edison:
+    
+        sudo apt install libqmi-utils
+
 1. Install MQTT:
 
         wget http://repo.mosquitto.org/debian/mosquitto-repo.gpg.key
