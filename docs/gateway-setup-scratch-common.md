@@ -44,6 +44,18 @@ Software Setup
             # Setup the correct gateway ID
             /home/debian/gateway/startup/set_gateway_id.sh
 
+3. Setup the gateway to flash the CC2538 to receive Triumvi packets
+on boot.
+
+    Edison:
+    
+        sudo apt install python-serial
+    
+    - Add to `/etc/rc.local`:
+    
+            # Configure the CC2538
+            /home/debian/gateway/startup/edison-v3-cc2538/flash_cc2538.sh
+
 1. Install MQTT:
 
         wget http://repo.mosquitto.org/debian/mosquitto-repo.gpg.key
