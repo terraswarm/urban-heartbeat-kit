@@ -60,7 +60,15 @@ on boot.
 
     Edison:
     
-        sudo apt install libqmi-utils
+        sudo apt install libgudev-1.0-dev
+        # Need a newer version than what is in the jessie repository
+        wget http://www.freedesktop.org/software/libqmi/libqmi-1.18.0.tar.xz
+        tar xf libqmi-1.18.0.tar.xz
+        cd libqmi-1.18.0
+        ./configure
+        make
+        sudo make install
+        
         sudo systemctl disable ModemManager
     
     - Then create the config file `/etc/qmi-network.conf`:
