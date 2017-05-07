@@ -82,6 +82,15 @@ on boot.
             
         for Verizon SIM card and version LE910-SVG of the radio.
 
+3. Make sure we get some valid nameservers. The LE910 setup stuff
+seems to overwrite nameservers with some useless ones.
+
+    Edison:
+    
+        sudo apt install resolvconf
+        sudo sh -c 'echo "nameserver 8.8.8.8\nnameserver 8.8.4.4" > /etc/resolvconf/resolv.conf.d/base'
+        sudo resolvconf -u
+
 1. Install MQTT:
 
         wget http://repo.mosquitto.org/debian/mosquitto-repo.gpg.key
