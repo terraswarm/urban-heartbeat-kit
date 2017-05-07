@@ -60,21 +60,11 @@ on boot.
 
     Edison:
     
-        sudo apt install libgudev-1.0-dev
-        
         # Need a newer version than what is in the jessie repository
-        
-        wget https://www.freedesktop.org/software/libmbim/libmbim-1.14.0.tar.xz
-        tar xf libmbim-1.14.0.tar.xz
-        cd libmbim-1.14.0
-        ./configure
-        make
-        sudo make install
-        
-        cd ..
-        wget http://www.freedesktop.org/software/libqmi/libqmi-1.18.0.tar.xz
-        tar xf libqmi-1.18.0.tar.xz
-        cd libqmi-1.18.0
+        # DO NOT USE 1.18. It did not work. 1.16 is known to work.
+        wget http://www.freedesktop.org/software/libqmi/libqmi-1.16.0.tar.xz
+        tar xf libqmi-1.16.0.tar.xz
+        cd libqmi-1.16.0
         ./configure --enable-mbim-qmux
         make
         sudo make install
