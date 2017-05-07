@@ -69,6 +69,11 @@ on boot.
         make
         sudo make install
         
+        # Make it so that we can find the shared library:
+        sudo sh -c 'echo "/usr/local/lib" > /etc/ld.so.conf.d/libqmi-glib.conf'
+        sudo ldconfig
+        
+        # Need this with the apt package, may not need with source install
         sudo systemctl disable ModemManager
     
     - Then create the config file `/etc/qmi-network.conf`:
