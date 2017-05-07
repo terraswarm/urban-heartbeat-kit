@@ -80,7 +80,7 @@ on boot.
     
             APN=VZWINTERNET
             
-        for Verizon SIM card.
+        for Verizon SIM card and version LE910-SVG of the radio.
 
 1. Install MQTT:
 
