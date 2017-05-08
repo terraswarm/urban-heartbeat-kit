@@ -49,6 +49,7 @@ replaced:
         sudo rm -r /usr/local/sbin
         sudo rm -r /opt/edison
         sudo rm /etc/init.d/galileod.sh
+        sudo sed -i "s/uvcvideo/#uvcvideo/g" /etc/modules-load.d/modules.conf
 
 3. If using a QMI supported cell radio (like LE910):
 
