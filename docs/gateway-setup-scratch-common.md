@@ -41,12 +41,14 @@ Software Setup
   
         sudo cp gateway/startup/edison/rc.local.edison /etc/rc.local
 
-3. Remove the `/usr/local/sbin` folder of stuff that we do not use or have
+3. Remove some crap from Intel or Jubilinux that we don't want or have
 replaced:
 
     Edison:
   
         sudo rm -r /usr/local/sbin
+        sudo rm -r /opt/edison
+        sudo rm /etc/init.d/galileod.sh
 
 3. If using a QMI supported cell radio (like LE910):
 
