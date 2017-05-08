@@ -18,8 +18,8 @@ Intel Edison Gateway Setup from Scratch
 2. Get jubilinux image inside of the repo:
 
         cd edison-linux-helper
-	wget http://www.jubilinux.org/dist/jubilinux-v0.1.1.zip
-	unzip jubilinux-v0.1.1.zip
+        wget http://www.jubilinux.org/dist/jubilinux-v0.1.1.zip
+        unzip jubilinux-v0.1.1.zip
 
 3. Add a patch to the patches folder so that it gets applied.
 
@@ -31,11 +31,11 @@ Intel Edison Gateway Setup from Scratch
 
         make menuconfig
 
-    - Enable `Device Drivers/Networking/USB/QMI`
-    - Enable `Device Drivers/USB/Serial/WWAN`
-    - Enable `Device Drivers/Networking/USB/
-    - Make `Device Drivers/GPIO/pca` "M" for module.
-    - Disable `Device Drivers/Sound card`
+    - Enable `Device Drivers/Network device support/USB Network Adapters/SMSC LAN95XX based USB 2.0 10/100 ethernet devices`
+    - Enable `Device Drivers/Network device support/USB Network Adapters/QMI WWAN driver for Qualcomm MSM based 3G and LTE modems`
+    - Enable `Device Drivers/USB support/USB Serial Converter support/USB driver for GSM and CDMA modems`
+    - Make `Device Drivers/GPIO Support/PCA953x, PCA955x, PCA957x, TCA64xx, and MAX7310 I/O ports` "M" for module.
+    - Disable `Device Drivers/Sound card support`
     
 5. Build the kernel:
 
