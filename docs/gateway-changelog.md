@@ -12,6 +12,16 @@
 SwarmGateway Changelog
 ======================
 
+Version 1.10
+------------
+
+- "Upgrade" to kernel 3.10.98.
+- Remove clloader from edison/arduino support.
+- Add support for LE910 cellular radio.
+- Add support for flashing the CC2538 at boot.
+- Massive upgrade to commissioning.
+  - Now support `first-install.sh` script that runs once after flashing.
+
 Version 1.3
 -----------
 
