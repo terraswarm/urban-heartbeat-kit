@@ -178,6 +178,7 @@ the edison over UART with something like:
 8. Get rid of edison user.
 
         passwd -l edison
+	sudo rm -rf /home/edison
 
 8. Install dependencies
 
