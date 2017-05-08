@@ -209,10 +209,6 @@ seems to overwrite nameservers with some useless ones.
 
 20. Clone gateway github repository
 
-        cd /opt
-        sudo mkdir swarm-gateway
-        sudo chown debian:debian swarm-gateway
-        cd swarm-gateway
         git clone https://github.com/lab11/gateway.git
         git clone https://github.com/lab11/gateway-tools.git
 
