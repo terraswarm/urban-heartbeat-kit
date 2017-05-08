@@ -11,34 +11,39 @@
 Intel Edison Gateway Setup from Scratch
 =======================================
 
-1. Download the latest version of [Jubilinux](http://www.robinkirkman.com/jubilinux/).
+1. Get the jubilinux `edison-linux-helper`:
 
-2. Extract Jubilinux.
+        git clone https://github.com/jubilinux/edison-linux-helper.git
+	
+2. Get jubilinux image inside of the repo:
 
-        mkdir jubilinux
-        mv jubilinux.zip jubilinux
-        cd jubilinux
-        unzip jubilinux.zip
+        cd edison-linux-helper
+	wget http://www.jubilinux.org/dist/jubilinux-v0.1.1.zip
+	unzip jubilinux-v0.1.1.zip
 
-3. This step is hard and takes hours. Compile edison/yocto
-(following [these](https://github.com/LGSInnovations/Edison-Ethernet/blob/master/guides/customize-yocto-kernel.md)
-directions. Make sure to both enable the USB Ethernet chip (as specified in those directions)
-and make a module of `device drivers/gpio/pca953x` (gpio extender) so it doesn't
-burn half of the Edison's CPU.
+3. Add a patch to the patches folder so that it gets applied.
 
-  1. build the kernel
-      ```
-      wget http://iotdk.intel.com/src/3.5/edison/iot-devkit-yp-poky-edison-20160606.zip
-      unzip iot-devkit-yp-poky-edison-20160606.zip
-      apt install texinfo gawk chrpath
-      cd iot-devkit-yp-poky-edison-20160606/poky
-      ln -s meta-intel-edison/utils/Makefile.mk Makefile
-      make setup
-      make edison-image
-      ```
+        cd patches
+	wget https://raw.githubusercontent.com/lab11/gateway/c38d090fb699b01a4f2bba36a60741714db95442/buildroot/external/board/lab11/edison_v3-3.10.98/patches/linux/linux-0001-edison-spi-yesheng.patch
+	cd ..
 
-4. Make sure to put the `/edison-src/out/current/build/tmp/work/edison-poky-linux/linux-yocto/3.10.17-r0/package/lib/modules`
-folder into the `.ext4` file (`/lib/modules/` folder).
+4. Select the correct kernel modules
+
+        make menuconfig
+
+    - Enable `Device Drivers/Networking/USB/QMI`
+    - Enable `Device Drivers/USB/Serial/WWAN`
+    - Enable `Device Drivers/Networking/USB/
+    - Make `Device Drivers/GPIO/pca` "M" for module.
+    - Disable `Device Drivers/Sound card`
+    
+5. Build the kernel:
+
+        make
+
+6. Patch up jubilinux with the new kernel and modules:
+
+        DFU=./jubilinux/ sudo make install
 
 3. Perform any device-specific configuration
  
