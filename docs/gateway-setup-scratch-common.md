@@ -39,10 +39,10 @@ Software Setup
 
     Edison:
     
-    - Add to `/etc/rc.local`:
+    - Add to `/etc/rc.local` right after disable watchdog:
     
-            # Setup the correct gateway ID
-            /home/debian/gateway/startup/set_gateway_id.sh
+            # Do setup on the first boot after flashing
+            /home/debian/gateway/startup/first_install.sh
 
 3. Setup the gateway to flash the CC2538 to receive Triumvi packets
 on boot.
@@ -51,7 +51,7 @@ on boot.
     
         sudo apt install python-serial
     
-    - Add to `/etc/rc.local`:
+    - Add to `/etc/rc.local` after the `first_install` line:
     
             # Configure the CC2538
             /home/debian/gateway/startup/edison-v3-cc2538/flash_cc2538.sh
