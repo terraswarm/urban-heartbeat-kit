@@ -34,6 +34,7 @@ Intel Edison Gateway Setup from Scratch
     - Enable `Device Drivers/Network device support/USB Network Adapters/SMSC LAN95XX based USB 2.0 10/100 ethernet devices`
     - Enable `Device Drivers/Network device support/USB Network Adapters/QMI WWAN driver for Qualcomm MSM based 3G and LTE modems`
     - Enable `Device Drivers/USB support/USB Serial Converter support/USB driver for GSM and CDMA modems`
+    - Enable `Device Drivers/USB support/USB Serial Converter support/USB FTDI Single Port Serial Driver`
     - Make `Device Drivers/GPIO Support/PCA953x, PCA955x, PCA957x, TCA64xx, and MAX7310 I/O ports` "M" for module.
     - Disable `Device Drivers/Sound card support`
     
