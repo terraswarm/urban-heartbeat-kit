@@ -35,26 +35,18 @@ Software Setup
 
         sudo sh -c 'echo "127.0.1.1    swarmgateway" >> /etc/hosts'
 
-3. Setup the gateway to configure its address on boot.
+3. Replace the `rc.local` file:
 
     Edison:
-    
-    - Add to `/etc/rc.local` right after disable watchdog:
-    
-            # Do setup on the first boot after flashing
-            /home/debian/gateway/startup/first_install.sh
+  
+        sudo cp gateway/startup/edison/rc.local.edison /etc/rc.local
 
-3. Setup the gateway to flash the CC2538 to receive Triumvi packets
-on boot.
+3. Remove the `/usr/local/sbin` folder of stuff that we do not use or have
+replaced:
 
     Edison:
-    
-        sudo apt install python-serial
-    
-    - Add to `/etc/rc.local` after the `first_install` line:
-    
-            # Configure the CC2538
-            /home/debian/gateway/startup/edison-v3-cc2538/flash_cc2538.sh
+  
+        sudo rm -r /usr/local/sbin
 
 3. If using a QMI supported cell radio (like LE910):
 
