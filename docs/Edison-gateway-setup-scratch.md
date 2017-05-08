@@ -24,8 +24,8 @@ Intel Edison Gateway Setup from Scratch
 3. Add a patch to the patches folder so that it gets applied.
 
         cd patches
-	wget https://raw.githubusercontent.com/lab11/gateway/c38d090fb699b01a4f2bba36a60741714db95442/buildroot/external/board/lab11/edison_v3-3.10.98/patches/linux/linux-0001-edison-spi-yesheng.patch
-	cd ..
+        wget https://raw.githubusercontent.com/lab11/gateway/c38d090fb699b01a4f2bba36a60741714db95442/buildroot/external/board/lab11/edison_v3-3.10.98/patches/linux/linux-0001-edison-spi-yesheng.patch
+        cd ..
 
 4. Select the correct kernel modules
 
