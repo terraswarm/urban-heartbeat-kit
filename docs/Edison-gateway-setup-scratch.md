@@ -44,7 +44,7 @@ Intel Edison Gateway Setup from Scratch
 6. Patch up jubilinux with the new kernel and modules:
 
         make collected
-	sudo ./dfu-image-install.sh `pwd`/jubilinux
+        sudo ./dfu-image-install.sh `pwd`/jubilinux
 
 3. Perform any device-specific configuration
  
