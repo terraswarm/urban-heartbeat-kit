@@ -268,6 +268,13 @@ See Beaglebone Black specific instructions [here](https://github.com/terraswarm/
         auto wlan0
         iface wlan0 inet dhcp
 
+26. On Edison, auto mount `/factory`:
+
+    Edison:
+    
+        #Add to /etc/fstab:
+        
+        /dev/mmcblk0p5      /factory    auto    defaults     1   1
 
 Version Bump Changes
 --------------------
