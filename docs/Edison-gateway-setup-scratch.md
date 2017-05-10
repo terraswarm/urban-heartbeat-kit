@@ -195,31 +195,6 @@ See the
 
 
 
-
-Build your own kernel
----------------------
-
-Based on instructions [here](https://github.com/LGSInnovations/Edison-Ethernet/blob/master/guides/customize-yocto-kernel.md).
-
-1. Download and extract the file that looks like `edison-src-ww25.5-15.tgz` from the left side of
-[Intel's page](https://downloadcenter.intel.com/download/25028/Intel-Edison-Board-Software-Package).
-You may need to look around for the latest version. I dunno.
-
-2. `make setup`
-
-4. If you have gcc 5.1 (or presumable later), you need to apply 
-[this](https://github.com/cloudius-systems/osv/blob/07e2d9032dbb3f4f2b0d0133e0eccd5be05dd05d/modules/ncurses/ncurses-5.9-gcc-5.patch)
-patch to the ncurses module.
-
-        patch -p1 < ./path/to/that/patch.patch
-
-3. This one takes a while:
-
-        cd out/linux64
-        source poky/oe-init-build-env
-        bitbake edison-image
-
-
 Copying image
 -------------
 
