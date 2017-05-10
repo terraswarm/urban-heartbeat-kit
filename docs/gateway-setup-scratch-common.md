@@ -204,6 +204,10 @@ seems to overwrite nameservers with some useless ones.
         63     PS1="v1.x $(ip route get 1 | cut -d' ' -f8) :$(cat /sys/class/net/eth0/address | cut -d':' -f6) \w$ "
         64 fi
                        |line 63 x         |line 61 x
+                       
+    Edison:
+    
+        PS1="v1.10 $(ip route get 1 | cut -d' ' -f8) :$(cat /factory/gateway_id | cut -d':' -f6) \w$ "
 
 19. Clean up home directory
 
