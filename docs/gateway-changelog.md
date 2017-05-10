@@ -17,10 +17,16 @@ Version 1.10
 
 - "Upgrade" to kernel 3.10.98.
 - Remove clloader from edison/arduino support.
-- Add support for LE910 cellular radio.
+- Add support for LE910 cellular radio with NetworkManager.
 - Add support for flashing the CC2538 at boot.
 - Massive upgrade to commissioning.
   - Now support `first-install.sh` script that runs once after flashing.
+- Support for reverse SSH connection.
+
+**Known Issues**
+- Triumvi rebroadcast to BLE does not seem to work at the same time as
+`ble-gateway-mqtt`. This used to work, and there are instructions for
+getting it to work, but it doesn't seem to work right now.
 
 Version 1.3
 -----------
