@@ -253,7 +253,7 @@ See Beaglebone Black specific instructions [here](https://github.com/terraswarm/
 
     Edison:
     
-        sudo sh -c "echo '/dev/mmcblk1p1      /media/sdcard auto  defaults,nofail     1   1\n' >> /etc/fstab"
+        sudo sh -c "echo '/dev/mmcblk1p1      /media/sdcard auto  defaults,nofail,uid=debian     1   1\n' >> /etc/fstab"
 
 
 25. Set the base `/etc/network/interfaces` file. Should look something like:
