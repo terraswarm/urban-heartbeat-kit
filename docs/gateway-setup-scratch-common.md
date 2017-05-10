@@ -67,15 +67,22 @@ replaced:
         # Make it so that we can find the shared library:
         sudo sh -c 'echo "/usr/local/lib" > /etc/ld.so.conf.d/libqmi-glib.conf'
         sudo ldconfig
-        
-        # Need this with the apt package, may not need with source install
-        sudo systemctl disable ModemManager
     
     - Then create the config file `/etc/qmi-network.conf`:
     
-            APN=VZWINTERNET
+            APN=
             
-        for Verizon SIM card and version LE910-SVG of the radio.
+        The value will be filled in at boot.
+    
+    - Then setup NetworkManager to manage the connection:
+    
+            sudo nmcli con edit type gsm con-name LE910
+              set connection.autoconnect false
+              set gsm.apn unknown
+              save
+              q
+              
+        Again the APN value will be filled in by set_apn.sh script.
 
 3. Make sure we get some valid nameservers. The LE910 setup stuff
 seems to overwrite nameservers with some useless ones.
