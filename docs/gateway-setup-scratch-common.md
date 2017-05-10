@@ -84,6 +84,19 @@ replaced:
               
         Again the APN value will be filled in by set_apn.sh script.
 
+3. We want a newer version of network manager:
+
+    Edison
+        
+        sudo apt remove networkmanager
+        sudo apt install libdbus-glib-1-dev intltool libnl-3-dev uuid-dev libnss3-dev libcurl4-openssl-dev libndp-dev libsystemd-dev libgnutls28-dev libmm-glib-dev libnewt-dev
+        wget https://download.gnome.org/sources/NetworkManager/1.8/NetworkManager-1.8.0.tar.xz
+        tar xf NetworkManager-1.8.0.tar.xz
+        cd NetworkManager-1.8.0
+        ./configure --libexecdir=/usr/lib/NetworkManager --with-pppd-plugin-dir=/usr/lib/pppd/2.4.6 --with-pppd=/usr/sbin/pppd --with-pppoe=/usr/sbin/pppoe --with-resolvconf=/sbin/resolvconf --with-dhclient=/sbin/dhclient --with-iptables=/sbin/iptables --with-dnsmasq=/usr/sbin/dnsmasq --with-systemdsystemunitdir=/lib/systemd/system --with-crypto=gnutls --with-session-tracking=systemd --with-suspend-resume=systemd --with-modem-manager-1 --with-nmtui --disable-more-warnings --disable-modify-system --enable-polkit --enable-ppp --enable-ifupdown --enable-concheck
+        make
+        
+
 3. Make sure we get some valid nameservers. The LE910 setup stuff
 seems to overwrite nameservers with some useless ones.
 
