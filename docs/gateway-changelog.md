@@ -16,6 +16,7 @@ Version 2.0.0
 ------------
 
 - "Upgrade" to kernel 3.10.98.
+- Upgrade to Debain Sid.
 - Remove clloader from edison/arduino support.
 - Add support for LE910 cellular radio with NetworkManager.
 - Add support for flashing the CC2538 at boot.
