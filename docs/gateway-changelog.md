@@ -12,7 +12,7 @@
 SwarmGateway Changelog
 ======================
 
-Version 1.10
+Version 2.0.0
 ------------
 
 - "Upgrade" to kernel 3.10.98.
@@ -22,11 +22,16 @@ Version 1.10
 - Massive upgrade to commissioning.
   - Now support `first-install.sh` script that runs once after flashing.
 - Support for reverse SSH connection.
+- Complete build script that sets up the entire image.
+- U-boot upgraded to 2017-05.
 
 **Known Issues**
 - Triumvi rebroadcast to BLE does not seem to work at the same time as
 `ble-gateway-mqtt`. This used to work, and there are instructions for
 getting it to work, but it doesn't seem to work right now.
+- Wifi does not connect automatically until `nmcli con up id MWireless`
+is run at least once. Once this has been done, then it seems to connect
+at boot.
 
 Version 1.3
 -----------
