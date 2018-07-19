@@ -233,6 +233,7 @@ seems to overwrite nameservers with some useless ones.
 
 21. Install gateway dependencies.
 
+        npm config set package-lock false
         cd gateway/software
         mkdir node_modules
         for i in * ; do if [[ -d $i ]] && [[ $i != "node_modules" ]]; then cd $i; ln -s ../node_modules .; npm i; cd ../; fi; done
